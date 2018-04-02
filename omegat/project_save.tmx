@@ -4,6 +4,14 @@
   <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="OmegaT-3.6.0" segtype="sentence" srclang="EN"/>
   <body>
 <!-- Default translations -->
+    <tu>
+      <tuv lang="EN">
+        <seg>OmegaT, the free translation memory tool</seg>
+      </tuv>
+      <tuv lang="ZH-CN" changeid="xulihang" changedate="20180402T080831Z" creationid="xulihang" creationdate="20180402T080831Z">
+        <seg>OmegaT——免费的计算机辅助翻译工具l</seg>
+      </tuv>
+    </tu>
 <!-- Alternative translations -->
   </body>
 </tmx>
