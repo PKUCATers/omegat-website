@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Propagation and one-to-many matching HowTo - OmegaT</title>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest"                            href="/manifest.json">
+  <link rel="mask-icon" color="#5bbad5"           href="/safari-pinned-tab.svg">
+  <meta name="apple-mobile-web-app-title" content="OmegaT">
+  <meta name="application-name" content="OmegaT">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/zh_CN/assets/omegat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/zh_CN/assets/omegat.js"></script>
+
+
+  <meta name="description" content="OmegaT is a free open-source translation memory application for professional translators written in Java.">
+
+  <link rel="canonical" href="http://omegat.org/zh_CN/howtos/prop12m">
+
+  
+    <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-87327-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  
+
+  <!-- SEO tags -->
+  
+  <meta property="og:title"       content="Propagation and one-to-many matching HowTo - OmegaT" />
+  <meta property="og:description" content="OmegaT is a free open-source translation memory application for professional translators written in Java." />
+  <meta property="og:url"         content="http://omegat.org/zh_CN/howtos/prop12m" />
+  <meta property="og:site_name"   content="OmegaT - The Free Translation Memory Tool" />
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@OmegaTOfficial" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    "url": "http://omegat.org/zh_CN",
+    "headline": "Propagation and one-to-many matching HowTo",
+    "description": "OmegaT is a free open-source translation memory application for professional translators written in Java.",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://omegat.org/img/omegat_96.png"
+      }
+    },
+    "sameAs": ["https://sourceforge.net/projects/omegat/","https://github.com/omegat-org/","https://twitter.com/OmegaTOfficial","https://www.facebook.com/OmegaTOfficial"]
+  }</script>
+  <!-- /SEO tags -->
+</head>
+
+
+
+  <body id="page">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#omegat-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+      </button>
+      <a class="navbar-brand" href="/zh_CN/">
+        <img alt="OmegaT" class="logo-omegat" src="/img/omegat.svg" height="80" width="80"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/download">Download</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/resources">Resources</a></li>
+        <li><a href="/zh_CN/documentation">Documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
+              Languages<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu languages">
+            
+            <li><a href="/ar/howtos/prop12m">&#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a></li>
+            
+            <li><a href="/ca/howtos/prop12m">Catal&#xE0;</a></li>
+            
+            <li><a href="/cz/howtos/prop12m">&#x10C;e&#x161;tina</a></li>
+            
+            <li><a href="/de/howtos/prop12m">Deutsch</a></li>
+            
+            <li><a href="/el/howtos/prop12m">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</a></li>
+            
+            <li><a href="/howtos/prop12m">English</a></li>
+            
+            <li><a href="/es/howtos/prop12m">Espa&#xF1;ol</a></li>
+            
+            <li><a href="/fr/howtos/prop12m">Fran&#xE7;ais</a></li>
+            
+            <li><a href="/gl/howtos/prop12m">Galego</a></li>
+            
+            <li><a href="/id/howtos/prop12m">Bahasa Indonesia</a></li>
+            
+            <li><a href="/ia/howtos/prop12m">Interlingua</a></li>
+            
+            <li><a href="/it/howtos/prop12m">Italiano</a></li>
+            
+            <li><a href="/ko/howtos/prop12m">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+            
+            <li><a href="/hu/howtos/prop12m">Magyar</a></li>
+            
+            <li><a href="/ja/howtos/prop12m">&#x65E5;&#x672C;&#x8A9E;</a></li>
+            
+            <li><a href="/nl/howtos/prop12m">Nederlands</a></li>
+            
+            <li><a href="/pl/howtos/prop12m">Polski</a></li>
+            
+            <li><a href="/pt_BR/howtos/prop12m">Portugu&#xEA;s (Brazil)</a></li>
+            
+            <li><a href="/pt/howtos/prop12m">Portugu&#xEA;s (Portugal)</a></li>
+            
+            <li><a href="/ru/howtos/prop12m">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+            
+            <li><a href="/sq/howtos/prop12m">Shqip</a></li>
+            
+            <li><a href="/sk/howtos/prop12m">Sloven&#x10D;ina</a></li>
+            
+            <li><a href="/si/howtos/prop12m">Sloven&#x161;&#x10D;ina</a></li>
+            
+            <li><a href="/hr/howtos/prop12m">Srpskohrvatski</a></li>
+            
+            <li><a href="/fi/howtos/prop12m">Suomi</a></li>
+            
+            <li><a href="/sv/howtos/prop12m">Svenska</a></li>
+            
+            <li><a href="/uk/howtos/prop12m">Українська</a></li>
+            
+            <li><a href="/zh_CN/howtos/prop12m">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+            
+            <li><a href="/zh_TW/howtos/prop12m">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="jumbotron jumbo-page titles-howtos-prop12m"><h1>Propagation and one-to-many matching HowTo</h1></div>
+        
+    <div class="container">
+
+
+<h3>介绍</h3>
+
+<p>本指南介绍了OmegaT的自动匹配传播和一对多匹配功能。.</p>
+
+<h3>传播</h3>
+
+<p>默认情况下，OmegaT使用自动匹配传播。这意味着只要翻译了一个片段，相同的翻译就会自动插入到所有相同的语段中。如果一个已译片段在下文更改了译法，则较早的片段将与最新修改的片段保持一致。OmegaT将多次出现的片段描述为“非唯一片段“。</p>
+
+<p>选择 视图 &gt; 标记 非唯一片段 将导致只显示非唯一片段的第一个实例显示为黑色，并且第二个和后续实例显示为灰色. 这个功能很实用，翻译校对时只需要检查相同段的第一个实例。. 因此用户很快就可以看到灰色而非黑色的语段已经检查完毕。 （如果选项&gt;浏览&gt;“标记非独特片段时包含第一个非独特片段”被选中，所有非独特片段包括第一个非独特片段将均按此方式标记）</p>
+
+<p>你可以通过项目&gt;属性&gt;取消勾选“翻译自动传输”选框，停用自动传输功能。该操作可以为所有非独特片段实例制作可选翻译（见下方“一对多匹配”）。</p>
+
+<h3>一对多匹配</h3>
+
+<p>大多数情况下，译员希望将一个项目里的相同片段以同样方式翻译。对于两处或更多相同片段需要不同译文的情况，OmegaT提供“一对多匹配”功能。</p>
+
+<p>OmegaT的一对多匹配功能首先默认相同片段应以同样方式翻译。这种译文被称为“默认翻译”。要产生不同于“默认译文”的翻译，在片段中右击鼠标，选择“创建可选翻译”。现在，这一片段可以按期望的方式翻译，且其他相同的实例不会自动变更成与它一致的译文。</p>
+
+<p>你可以为相同片段设置多种“可选翻译”，但只能有一种默认翻译（或完全没有）。</p>
+
+<p>若要将一种可选翻译设置成默认翻译，鼠标右击译文，选择“用做默认翻译”。这将使当下译文成为“默认翻译”。. 使用之前“默认翻译”的相同片段的其他所有实例，现在都与当下译文保持一直。</p>
+
+<p>如果你已经翻译过一例非独特片段，并且希望为这非独特片段制作一种不同的默认翻译，同时还不想改变已经翻译过的实例的译文，你必须先用“创建可选翻译”将已翻译片段设定为“可选翻译”状态，</p>
+
+<p>要撤销一个片段的“可选翻译”状态，并使其与“默认翻译”保持一致，仅需删除掉这一片段的内容即可。该操作同时还有删除“可选翻译”状态的效果；因此该片段的译文又变回了默认翻译。可以通过使用键盘快捷键Ctrl+A &gt; Ctrl+X &gt; Enter，或鼠标右击片段，选择移除翻译菜单选项，再或重复使用删除键，均可实现完全删除一条片段的内容</p>
+
+
+<h3>传输摘要与一对多匹配指令</h3>
+
+<p><b>无</b> （默认行为）：所有相同片段都自动以同样形式翻译</p>
+
+<p><b>标记非独特片段</b>：相同片段都用灰色标记（改变显示，而非行为）。</p>
+
+<p><b>创建可选译文</b>：让片段变得独特。当前片段的改动或“默认翻译”的改变，对其他片段均无影响，</p>
+
+<p><b>撤销翻译</b>删掉片段内容，（当按下Enter键后）会插入默认翻译。</p>
+
+<p><b>用作默认翻译</b>：活跃片段被用做默认翻译，因此所有采用之前“默认翻译”的片段都与当前默认翻译保持一直。</p>
+
+
+
+<h3>指向说明</h3>
+
+<p>对于一些文件类型，OmegaT通过参考他们的前后片段来区别相同片段。相同片段通过创建“可选翻译”而得到不同的前/后片段。有些情况，两个片段也会拥有相同的前后片段，（例如，当一整页内容在一篇文章中出现两次），在OmegaT中这两页无法被译成不同的版本，即无法为其中一页设置“可选译文”。</p>
+
+<p>“非独特片段”包含默认和可选翻译因此，（用灰色字体）标记为非独特的片段，无论可选翻译是否被创建均被标记为非独特片段。</p>
+
+<p>默认地，前往下一未翻译片段指令（Ctrl+U）跳转到下一条未翻译的片段，过程中跳过已传输的翻译。如果选项&gt;编辑行为&gt;“当至少有一种可选翻译时前往下一未翻译片段”被选中，并且一个非独特片段至少创建了一种可选翻译，该功能将该片段的所有实例（不管是默认翻译还是可选翻译）视为未翻译，即不会跳过这些片段。</p>
+
+
+<p>版权归属于Marc Prior 2014</p>
+
+</div>
+
+
+
+
+    <footer class="container-fluid text-center">
+  <a href="#page" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"><!----></span>
+  </a>
+  <div class="container-fluid">
+      <div class="col-sm-offset-3 col-sm-2 footer-column">
+        <h4>Connect</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://sourceforge.net/projects/omegat/"><img alt="Sourceforge" src="/img/sourceforge.svg" height="24" width="24"/> Sourceforge</a></li>
+            <li><a href="https://github.com/omegat-org/"><img alt="Github" src="/img/github.svg" height="24" width="24"/> Github</a></li>
+            <li><a href="https://twitter.com/OmegaTOfficial"><img alt="Twitter" src="/img/twitter.svg" height="24" width="24"/> Twitter</a></li>
+            <li><a href="https://www.facebook.com/OmegaTOfficial"><img alt="Facebook" src="/img/facebook.svg" height="24" width="24"/> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Documentation</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manual</a></li>
+            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutorials</a></li>
+            <li><a href="/zh_CN/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> How-To</a></li>
+            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> Reviews</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>The OmegaT Project</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li>
+            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> Contact and Support</a>
+            </li>
+            <li>
+            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> About</a>
+            </li>
+            <li>
+            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <p class="footer-copyright">Copyright &#xA9; 2017 - <a href="/zh_CN/">omegat.org</a></p>
+</footer>
+
+
+  </body>
+
+</html>
+

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Howto - Translating Word 2007 files in OmegaT - OmegaT</title>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest"                            href="/manifest.json">
+  <link rel="mask-icon" color="#5bbad5"           href="/safari-pinned-tab.svg">
+  <meta name="apple-mobile-web-app-title" content="OmegaT">
+  <meta name="application-name" content="OmegaT">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/zh_CN/assets/omegat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/zh_CN/assets/omegat.js"></script>
+
+
+  <meta name="description" content="OmegaT is a free open-source translation memory application for professional translators written in Java.">
+
+  <link rel="canonical" href="http://omegat.org/zh_CN/howtos/docx">
+
+  
+    <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-87327-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  
+
+  <!-- SEO tags -->
+  
+  <meta property="og:title"       content="Howto - Translating Word 2007 files in OmegaT - OmegaT" />
+  <meta property="og:description" content="OmegaT is a free open-source translation memory application for professional translators written in Java." />
+  <meta property="og:url"         content="http://omegat.org/zh_CN/howtos/docx" />
+  <meta property="og:site_name"   content="OmegaT - The Free Translation Memory Tool" />
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@OmegaTOfficial" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    "url": "http://omegat.org/zh_CN",
+    "headline": "Howto - Translating Word 2007 files in OmegaT",
+    "description": "OmegaT is a free open-source translation memory application for professional translators written in Java.",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://omegat.org/img/omegat_96.png"
+      }
+    },
+    "sameAs": ["https://sourceforge.net/projects/omegat/","https://github.com/omegat-org/","https://twitter.com/OmegaTOfficial","https://www.facebook.com/OmegaTOfficial"]
+  }</script>
+  <!-- /SEO tags -->
+</head>
+
+
+
+  <body id="page">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#omegat-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+      </button>
+      <a class="navbar-brand" href="/zh_CN/">
+        <img alt="OmegaT" class="logo-omegat" src="/img/omegat.svg" height="80" width="80"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/download">Download</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/resources">Resources</a></li>
+        <li><a href="/zh_CN/documentation">Documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
+              Languages<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu languages">
+            
+            <li><a href="/ar/howtos/docx">&#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a></li>
+            
+            <li><a href="/ca/howtos/docx">Catal&#xE0;</a></li>
+            
+            <li><a href="/cz/howtos/docx">&#x10C;e&#x161;tina</a></li>
+            
+            <li><a href="/de/howtos/docx">Deutsch</a></li>
+            
+            <li><a href="/el/howtos/docx">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</a></li>
+            
+            <li><a href="/howtos/docx">English</a></li>
+            
+            <li><a href="/es/howtos/docx">Espa&#xF1;ol</a></li>
+            
+            <li><a href="/fr/howtos/docx">Fran&#xE7;ais</a></li>
+            
+            <li><a href="/gl/howtos/docx">Galego</a></li>
+            
+            <li><a href="/id/howtos/docx">Bahasa Indonesia</a></li>
+            
+            <li><a href="/ia/howtos/docx">Interlingua</a></li>
+            
+            <li><a href="/it/howtos/docx">Italiano</a></li>
+            
+            <li><a href="/ko/howtos/docx">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+            
+            <li><a href="/hu/howtos/docx">Magyar</a></li>
+            
+            <li><a href="/ja/howtos/docx">&#x65E5;&#x672C;&#x8A9E;</a></li>
+            
+            <li><a href="/nl/howtos/docx">Nederlands</a></li>
+            
+            <li><a href="/pl/howtos/docx">Polski</a></li>
+            
+            <li><a href="/pt_BR/howtos/docx">Portugu&#xEA;s (Brazil)</a></li>
+            
+            <li><a href="/pt/howtos/docx">Portugu&#xEA;s (Portugal)</a></li>
+            
+            <li><a href="/ru/howtos/docx">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+            
+            <li><a href="/sq/howtos/docx">Shqip</a></li>
+            
+            <li><a href="/sk/howtos/docx">Sloven&#x10D;ina</a></li>
+            
+            <li><a href="/si/howtos/docx">Sloven&#x161;&#x10D;ina</a></li>
+            
+            <li><a href="/hr/howtos/docx">Srpskohrvatski</a></li>
+            
+            <li><a href="/fi/howtos/docx">Suomi</a></li>
+            
+            <li><a href="/sv/howtos/docx">Svenska</a></li>
+            
+            <li><a href="/uk/howtos/docx">Українська</a></li>
+            
+            <li><a href="/zh_CN/howtos/docx">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+            
+            <li><a href="/zh_TW/howtos/docx">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="jumbotron jumbo-page titles-howtos-docx"><h1>Howto - Translating Word 2007 files in OmegaT</h1></div>
+        
+    <div class="container">
+  <p>本HowTo提供有关在OmegaT中翻译MS Office 2007及更高版本（Office Open XML，.docx）文件的提示。</p>
+  <h3>背景</h3>
+  <p>随着Microsoft Office 2007的出现，Microsoft Word，Excel和Powerpoint具有新的默认文件格式。这些格式正式称为“Office Open XML”，分别具有扩展名.docx，.xlsx和.pptx。这些格式也在MS Office 2010中使用。为了方便起见，下面将它们称为“MS Office 2007文件格式”。</p>
+  <p>从版本1.7.1开始，OmegaT能够直接处理Microsoft Office 2007文件，无需转换。随着OmegaT 2.1.8版的出现，在OmegaT中处理这种文件格式也变得更加用户友好。</p>
+  <h3>与OmegaT结合使用.docx格式的优势</h3>
+  <p>随着客户/作者将Microsoft Office / Word升级到更新版本，翻译人员可能希望以新格式越来越多地接收文件。与传统的.doc，.xls和.ppt格式不同，这些文件可以直接在OmegaT中处理，而不会由于转换为其他格式而导致格式丢失。</p>
+  <p>新格式还可以作为处理旧版.doc，.xls和.ppt格式的有用方式，因为它们可以转换为其MS Office 2007对应版本，在OmegaT中翻译并再次转换。因此，对于不希望为此使用OpenOffice.org的翻译人员而言，此过程是一种选择。</p>
+  <h3>转换为MS Office 2007格式</h3>
+  <p>您可以将MS Office 1997/2000/2003 / XP文件转换为MS Office 2007格式，方法是在MS Office 2007中打开它们，并以新格式保存为“另存为”。（由于这是标准格式，因此在MS Office 2007中简单描述为Word，Excel或Powerpoint）。</p>
+  <p>对于没有MS Office 2007或2010并且不想购买的用户，Microsoft为早期版本提供<a href="http://www.microsoft.com/downloads/details.aspx?familyid=941b3470-3ae9-4aee-8f43-c6bb74cd1466&amp;display">兼容性插件&lt;/ a0&gt;。</p>
+  <p>Linux用户：MS Office 2007和Microsoft兼容插件均在<a href="http://www.codeweavers.com"> Crossover Linux上运行。&lt;/ a0&gt;</p>
+  <h3>在OmegaT中使用.docx，.xlsx和.pptx格式时需要注意的事项</h3>
+  <p>在2.1.8之前的OmegaT版本中，MS Office 2007文件中的每个格式更改都会导致一连串多个标签，这通常会导致处理此文件格式不切实际。从版本2.1.8开始，默认情况下，这些多个标签现在被汇总（压缩）成一个标签。因此，希望翻译MS Office 2007文件的用户应该升级到OmegaT 2.1.8或更高版本。</p>
+  <p>（使用.docx文件进行标签处理的难度越来越大，这是以格式化控制方面的轻微损失为代价的。例如，如果没有“聚合标签”功能，则源文本中的单词以粗体和斜体显示，译者可以选择仅以粗体显示，或仅以斜体显示。启用“聚合标签”功能后，这是不可能的。大多数用户可能会发现更大的易用性超过了这个缺点。)</p>
+  <p>.docx格式也容易引入“滋扰”格式代码，导致OmegaT编辑器窗格中出现不需要的和不必要的标签。由于这些在翻译过程中不方便，因此在开始OmegaT翻译之前，尝试去除这些令人讨厌的标签是值得的。OmegaT与处理.docx格式的其他CAT工具共享此问题，并且解决方案相似或相同。</p>
+  <h3>如何从.docx文件中删除不需要的格式代码</h3>
+  <ul>
+    <li>
+      <p>Word 2007标记任何不在其拼写词典中的单词，因此即使是一些它认为拼错的单词也会导致过多的标签。如果OmegaT中的每个单词都包含在标签内，Word可能会拼写检查文本而无法访问合适的拼写字典，因此将每个单词标记为拼写错误。一种解决方案是关闭Word中的自动拼写检查。</p>
+    </li>
+    <li>
+      <p>自动连字还会添加不必要的标签，因此请将其禁用。It may be necessary to do this for each document, in which case the procedure in Word 2007 is: Click the Page Layout tab; in the Page Setup group, click Hyphenation; then click None.</p>
+    </li>
+    <li>
+      <p>Use Search and Replace to remove double spaces (replacing them with a single space).</p>
+    </li>
+    <li>If your text contains both Asian and "normal" (e.g. Latin) characters, use Ctrl+A to select the entire text, then select a single font for it. Be careful to choose a font that contains both the necessary Asian and "normal" characters, such as MS Mincho, but without the "[text body]" style suffix.</li>
+    <li>
+      <p>Word 2007 inserts a tag at page breaks, even automatic page breaks. This tag apparently cannot be removed.</p>
+    </li>
+  </ul>
+  <p>Note that even after Word's settings have been changed so that it does not insert "nuisance" codes, for example for auto-hyphenation, such codes may still be present in the file and not removed by the change in configuration. Removal of these codes is described below. Before following the instructions below for removal of the nuisance codes, however, remember to make the configuration changes in Word first, or Word may simply re-insert nuisance codes again when the file is next opened.</p>
+  <h3>Third-party tools</h3>
+  <p>As already mentioned, this problem with MS Word is not unique to OmegaT. Third-party tools have been produced to deal with the problem. Two of these are:</p>
+  <p><a href="http://asap-traduction.com/CodeZapper">CodeZapper</a> (inexpensive)</p>
+  <p><a href="http://www.translatortools.net/word-doccleaner.html">Document Cleaner</a> (free)</p>
+  <h3>Levelling character formatting</h3>
+  <p>An alternative to running the CodeZapper macro on your text is to "level" the formatting. "Levelling" the formatting means applying the format of the first character in a selection of text (such as a whole paragraph) to all subsequent characters. Note that this is not the same as "deleting" the formatting, which would cause the character formatting to revert to the document's default.</p>
+  <p>You can level the formatting of paragraphs essentially by copying whole paragraphs in MS Word and pasting them back over themselves such that the entire paragraph assumes the formatting of the first character.</p>
+  <h3>Levelling the character formatting of a paragraph manually</h3>
+  <p>Step 1: Unhide the paragraph mark. Mark each paragraph by clicking on it repeatedly until the entire paragraph is highlighted. Then move the end of the highlighting one character to the left so that it does not include the paragraph mark.</p>
+  <p>Step 2: Copy this highlighted text (Ctrl+C). Then select "Paste Special" (Word 2003) or click on the arrow at the bottom of the "Insert" button (Word 2007) to obtain the extended Paste options. Finally, insert the content using the "Unformatted Unicode text" option.</p>
+  <p>Where paragraphs do contain inline formatting (bold, italics, hyperlinks, etc.), you can either:</p>
+  <p>- level the formatting from these paragraphs using the macro as described above, then re-insert the formatting; or</p>
+  <p>- mark only the text up to the beginning of the formatted part, copy this text and paste it back over itself, then repeat the process on the text after the formatted part.  </p>
+  <h3>Creating a macro to level the character formatting of a paragraph</h3>
+  <p>You can automate the above procedure somewhat by creating a macro. Brief instructions for creating the macro (in MS Office 2007) are provided below. (For more detailed instructions, refer to your instruction manual or click <a href="http://office.microsoft.com/en-us/word-help/record-or-run-a-macro-HA010099769.aspx">here</a>, <a href="http://www.dummies.com/how-to/content/how-to-create-a-word-2007-macro.html">here</a> or <a href="https://oit.nd.edu/assets/141085/word_2013_macros_qrg.pdf">here</a>.)</p>
+  <p>If you have not already done so, add the Developer tab to the ribbon as follows: click on the Office button. Select Word Options. Click Popular in the Word Options dialog box. On the ribbon, check Show Developer tab and confirm with OK. Close Word.</p>
+  <p>Launch Word again, create a new Word file and add a paragraph of sample text, at least three lines long, e.g.:</p>
+  <p>This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.</p>
+  <p>Click on the paragraph mark button to make paragraph marks visible.</p>
+  <p>Place the cursor in your paragraph of text (not in the first or last lines).</p>
+  <p>Create the macro:</p>
+  <p>On the Developer tab, click on Record Macro.</p>
+  <p>In the Macro name box, type a name for the macro, such as "levelformat". To make the macro available in all documents, select Normal.dotm in the "Store macro in" box. If you have made changes to your Normal.dotm, you might want to back this up first.  </p>
+  <p>Click on the Keyboard button. Click in the box for a new keyboard combination, then experiment with keyboard combinations to find one that is not assigned. If a combination you try is already assigned, a message to this effect is displayed in the dialogue, and you can delete the combination and try another. Ctrl+Shift+9 appears not to be assigned to any other function in the basic Word installation, but you can use any other combination that has not already been assigned.</p>
+  <p>Click on Assign to assign the shortcut to the macro that you are about to record. Anything you now do will be recorded in the macro, so follow this procedure carefully:</p>
+  <p>Ctrl+Cursor Up (this takes the cursor to the beginning of the paragraph)</p>
+  <p>Ctrl+Shift+Cursor Down (this selects the paragraph, including the paragraph mark)</p>
+  <p>Shift+Cursor Left (this moves the end of the selection one character to the 
+left so that it no longer includes the paragraph mark)</p>
+  <p>Ctrl+C (this copies the paragraph)</p>
+  <p>Ctrl+V (this pastes the text of the paragraph back over the paragraph)</p>
+  <p>After entering these commands, click Stop Recording.</p>
+  <p>Click on Macros and select levelformat (or whatever name you gave to your macro), then Edit. The 
+code of your macro(s) will be displayed. For levelformat, this should be:</p>
+  <p>___________________<br/>
+Sub levelformat()<br/>
+'<br/>
+' levelformat macro<br/>
+'<br/>
+'<br/>
+    Selection.MoveUp Unit:=wdParagraph, Count:=1<br/>
+    Selection.MoveDown Unit:=wdParagraph, Count:=1, Extend:=wdExtend<br/>
+    Selection.MoveLeft Unit:=wdWord, Count:=1, Extend:=wdExtend<br/>
+    Selection.Copy<br/>
+    Selection.PasteAndFormat (wdPasteDefault)<br/>
+End Sub<br/>
+___________________</p>
+  <p>Change the line:</p>
+  <p>        Selection.PasteAndFormat (wdPasteDefault)</p>
+  <p>改为:</p>
+  <p>        Selection.PasteSpecial DataType:=wdPasteText</p>
+  <p>Save with Ctrl+S, and close the macro editing window.</p>
+  <p>If all has gone according to plan, your macro should now work. To test it, add some formatting to your Word document, for example by making one word bold. Now simply place the cursor anywhere in the paragraph and press Ctrl+Shift+9 (or whatever other keyboard shortcut you selected), and you should see the formatting disappear.</p>
+  <p>You can change the keyboard shortcut at any time. To do this, click the main "Office" button, then Word options (bottom right of the dialog).</p>
+  <p>Click Customize &gt; Choose commands. Choose Macros from the drop-down list. Select "levelformat" (or whatever you called it).</p>
+  <p>At the bottom of the dialog next to Keyboard shortcuts, click on Customize.</p>
+  <p>In the Categories box, scroll down to Macros and select it. Then on the right, under Macros, select levelformat (or whatever you called your macro). The current shortcut will be displayed in the relevant box. You can clear it by selecting it and hitting Delete. You can then enter a new shortcut and assign it with Assign as you did before. Close/confirm the dialogs.</p>
+  <p>You can use a similar procedure to create a button for your macro:</p>
+  <p>Again, click the main "Office" button, then Word options.</p>
+  <p>Click Customize &gt; Choose commands. Choose Macros from the drop-down list. Select your macro.</p>
+  <p>Click on Add. You should see the macro command appear in the right-hand column. Click on Modify.</p>
+  <p>Pick a symbol, then OK &gt; OK. The symbol for your macro should appear in the toolbar.</p>
+  <p>This macro is useful for levelling the formatting of a whole paragraph that contains no visible formatting. Where a paragraph contains desired formatting, you must restore the deleted formatting after levelling the paragraph. In paragraphs containing lots of formatting, restoring the deleted formatting can be quite a lot of work. For such paragraphs, consider the following alternatives:  </p>
+  <ul>
+    <li>
+      <p>Use Dave Turner's CodeZapper macro.  </p>
+    </li>
+    <li>
+      <p>Create a second macro (with its own button and/or keyboard shortcut) of your own that only levels highlighted text, rather than the entire paragraph. (Record as described above, but only recording the command Ctrl+C followed by Ctrl+V.) You can then highlight text between the points at which formatting changes. This will level the formatting over sections of text that have the same, desired formatting, and you will not then need to restore deleted formatting.</p>
+    </li>
+    <li>
+      <p>Use the level formatting macro only on paragraphs with little or no formatting. Paragraphs that you have not "levelled" will then contain nuisance tags, but at least the others will be much "cleaner".</p>
+    </li>
+    <li>
+      <p>More advanced users may wish to try OmegaT's Text Export function. In conjunction with the te-st-notags script, this provides a separate window in which tags are not displayed. You must still handle tags properly when producing and editing your translation, but you can view it in a separate window without the clutter of tags ("tag soup").</p>
+    </li>
+  </ul>
+  <p>版权归属于Marc Prior 2009-2011</p>
+</div>
+
+
+
+
+    <footer class="container-fluid text-center">
+  <a href="#page" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"><!----></span>
+  </a>
+  <div class="container-fluid">
+      <div class="col-sm-offset-3 col-sm-2 footer-column">
+        <h4>Connect</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://sourceforge.net/projects/omegat/"><img alt="Sourceforge" src="/img/sourceforge.svg" height="24" width="24"/> Sourceforge</a></li>
+            <li><a href="https://github.com/omegat-org/"><img alt="Github" src="/img/github.svg" height="24" width="24"/> Github</a></li>
+            <li><a href="https://twitter.com/OmegaTOfficial"><img alt="Twitter" src="/img/twitter.svg" height="24" width="24"/> Twitter</a></li>
+            <li><a href="https://www.facebook.com/OmegaTOfficial"><img alt="Facebook" src="/img/facebook.svg" height="24" width="24"/> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Documentation</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manual</a></li>
+            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutorials</a></li>
+            <li><a href="/zh_CN/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> How-To</a></li>
+            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> Reviews</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>The OmegaT Project</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li>
+            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> Contact and Support</a>
+            </li>
+            <li>
+            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> About</a>
+            </li>
+            <li>
+            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <p class="footer-copyright">Copyright &#xA9; 2017 - <a href="/zh_CN/">omegat.org</a></p>
+</footer>
+
+
+  </body>
+
+</html>
+

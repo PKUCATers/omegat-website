@@ -1,0 +1,1 @@
+Sitemap: http://omegat.org/zh_TW/sitemap.xml

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Howto - Using the OmegaT tokenizer - OmegaT</title>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest"                            href="/manifest.json">
+  <link rel="mask-icon" color="#5bbad5"           href="/safari-pinned-tab.svg">
+  <meta name="apple-mobile-web-app-title" content="OmegaT">
+  <meta name="application-name" content="OmegaT">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/zh_CN/assets/omegat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/zh_CN/assets/omegat.js"></script>
+
+
+  <meta name="description" content="OmegaT is a free open-source translation memory application for professional translators written in Java.">
+
+  <link rel="canonical" href="http://omegat.org/zh_CN/howtos/tokenizer">
+
+  
+    <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-87327-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  
+
+  <!-- SEO tags -->
+  
+  <meta property="og:title"       content="Howto - Using the OmegaT tokenizer - OmegaT" />
+  <meta property="og:description" content="OmegaT is a free open-source translation memory application for professional translators written in Java." />
+  <meta property="og:url"         content="http://omegat.org/zh_CN/howtos/tokenizer" />
+  <meta property="og:site_name"   content="OmegaT - The Free Translation Memory Tool" />
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@OmegaTOfficial" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    "url": "http://omegat.org/zh_CN",
+    "headline": "Howto - Using the OmegaT tokenizer",
+    "description": "OmegaT is a free open-source translation memory application for professional translators written in Java.",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://omegat.org/img/omegat_96.png"
+      }
+    },
+    "sameAs": ["https://sourceforge.net/projects/omegat/","https://github.com/omegat-org/","https://twitter.com/OmegaTOfficial","https://www.facebook.com/OmegaTOfficial"]
+  }</script>
+  <!-- /SEO tags -->
+</head>
+
+
+
+  <body id="page">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#omegat-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+      </button>
+      <a class="navbar-brand" href="/zh_CN/">
+        <img alt="OmegaT" class="logo-omegat" src="/img/omegat.svg" height="80" width="80"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/download">Download</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/resources">Resources</a></li>
+        <li><a href="/zh_CN/documentation">Documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
+              Languages<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu languages">
+            
+            <li><a href="/ar/howtos/tokenizer">&#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a></li>
+            
+            <li><a href="/ca/howtos/tokenizer">Catal&#xE0;</a></li>
+            
+            <li><a href="/cz/howtos/tokenizer">&#x10C;e&#x161;tina</a></li>
+            
+            <li><a href="/de/howtos/tokenizer">Deutsch</a></li>
+            
+            <li><a href="/el/howtos/tokenizer">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</a></li>
+            
+            <li><a href="/howtos/tokenizer">English</a></li>
+            
+            <li><a href="/es/howtos/tokenizer">Espa&#xF1;ol</a></li>
+            
+            <li><a href="/fr/howtos/tokenizer">Fran&#xE7;ais</a></li>
+            
+            <li><a href="/gl/howtos/tokenizer">Galego</a></li>
+            
+            <li><a href="/id/howtos/tokenizer">Bahasa Indonesia</a></li>
+            
+            <li><a href="/ia/howtos/tokenizer">Interlingua</a></li>
+            
+            <li><a href="/it/howtos/tokenizer">Italiano</a></li>
+            
+            <li><a href="/ko/howtos/tokenizer">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+            
+            <li><a href="/hu/howtos/tokenizer">Magyar</a></li>
+            
+            <li><a href="/ja/howtos/tokenizer">&#x65E5;&#x672C;&#x8A9E;</a></li>
+            
+            <li><a href="/nl/howtos/tokenizer">Nederlands</a></li>
+            
+            <li><a href="/pl/howtos/tokenizer">Polski</a></li>
+            
+            <li><a href="/pt_BR/howtos/tokenizer">Portugu&#xEA;s (Brazil)</a></li>
+            
+            <li><a href="/pt/howtos/tokenizer">Portugu&#xEA;s (Portugal)</a></li>
+            
+            <li><a href="/ru/howtos/tokenizer">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+            
+            <li><a href="/sq/howtos/tokenizer">Shqip</a></li>
+            
+            <li><a href="/sk/howtos/tokenizer">Sloven&#x10D;ina</a></li>
+            
+            <li><a href="/si/howtos/tokenizer">Sloven&#x161;&#x10D;ina</a></li>
+            
+            <li><a href="/hr/howtos/tokenizer">Srpskohrvatski</a></li>
+            
+            <li><a href="/fi/howtos/tokenizer">Suomi</a></li>
+            
+            <li><a href="/sv/howtos/tokenizer">Svenska</a></li>
+            
+            <li><a href="/uk/howtos/tokenizer">Українська</a></li>
+            
+            <li><a href="/zh_CN/howtos/tokenizer">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+            
+            <li><a href="/zh_TW/howtos/tokenizer">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="jumbotron jumbo-page titles-howtos-tokenizer"><h1>Howto - Using the OmegaT tokenizer</h1></div>
+        
+    <div class="container">
+
+
+<p><strong>分词器插件已集成到3.0.0版的OmegaT中。以下信息仅当你使用早于3.0.0的OmegaT版本时才适用。<br/>如果你曾经使用OmegaT的早期版本的分词器插件，并现在已升级到OmegaT的3.0.0版或更高版本，请从插件文件夹中删除分词器插件文件。</strong></p>
+
+<p>OmegaT tokenizer是OmegaT的一个插件。它通过计算源词的词根（“词干”）来为OmegaT提供更好的模糊匹配和术语表匹配。例如，即使词汇表条目仅包含单词的原型，它也会识别文本中的变形词并显示相应的词汇表条目。
+</p>
+
+<h3>准备</h3>
+
+<p>在使用OmegaT的分词器之前，你必须首先确保你的OmegaT版本适配分词器，并已经做好了准备。</p>
+
+<p><strong> Webstart版本的OmegaT</strong>:：分词器与Webstart版本的OmegaT不兼容。如果你希望使用分词器，请为你的系统安装标准版本的OmegaT（最新测试版）。 </p>
+
+<p><strong>OmegaT 2.1.0 及之前版本</strong>：当前的分词器不适配这些版本（分词器可以与版本2.0.x和2.1.0一起使用，但这需要不同版本的分词器以及不同的安装过程。）建议用户升级到OmegaT的最新测试版。</p>
+
+<p><strong>Windows版本的 OmegaT</strong>：为了使OmegaT（任何版本）可以与分词器一起使用，它必须从启动脚本文件启动。Windows 版本的OmegaT不提供启动脚本文件。如果你使用的是有JRE环境的Windows，下载名为<a href="/files/OmegaT_with_JRE.bat">OmegaT_with_JRE.bat</a>的文件; 如果你使用的是没有JRE环境的Windows， 下载名为<a href="/files/OmegaT_without_JRE.bat">OmegaT_without_JRE.bat</a>的文件. 下载完成后，将文件放在OmegaT主文件夹（包含文件OmegaT.jar的文件夹）中。</p>
+
+<p><strong>平台中立版本（Windows系统）</strong>: 找到OmegaT启动脚本文件（OmegaT.bat）。</p>
+
+<p><strong>Linux 版本/系统</strong>：找到你的OmegaT启动脚本文件（OmegaT或OmegaT.sh）。</p>
+
+<p>在执行启动脚本文件时检查是否启动了OmegaT<br/>-在Linux系统上，使用命令行<br/>- 在Windows系统上，点击启动脚本文件</p>
+
+
+<h3>安装分词器</h3>
+
+<p>做好安装准备工作之后（见上文），按照如下步骤安装分词器：</p>
+
+<p>1. 下载 <a href="http://sourceforge.net/projects/omegat-plugins/files/OmegaT-tokenizers/OmegaT%202.1.1%20and%20later/0.5-2.1/OmegaT-tokenizers_0.5-2.1.zip/download">分词器压缩包 (OmegaT 2.1.1 及之后版本适用）</a>.</p>
+
+<p>2. 从分词器压缩包中解压文件</p>
+
+<p>3. 在OmegaT主程序文件夹（即包含文件OmegaT.jar的文件夹）中，如果尚未存在名为“plugins”的子文件夹，则创建一个名为“plugins”的子文件夹。把你从分词器压缩包中解压缩的文件直接复制到此子文件夹中。</p>
+
+<p>4. 在文本编辑器中打开启动脚本文件。（特别是）Windows用户： <strong>不要</strong> 直接点击此文件。相反，启动文本编辑器（例如记事本或写字板），然后使用“文件&gt;打开”打开启动脚本文件。你也可以在文件上单击鼠标右键，然后选择一个文本编辑器打开它。</p>
+
+<p>5. 启动文件脚本包含OmegaT启动命令。该命令的基本形式为：</p>
+
+<p> java -jar OmegaT.jar</p>
+
+<p>根据您的系统配置，启动命令可能会稍有不同。</p>
+
+<p>6. 根据你的 <strong>源</strong> 语言，从以下列表中选择一个分词器：</p>
+
+<p>org.omegat.plugins.tokenizer.LuceneArabicTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneBrazilianTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneChineseTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneCJKTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneCzechTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneDutchTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneFrenchTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneGermanTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneGreekTokenizer<br/>
+org.omegat.plugins.tokenizer.LucenePersianTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneSmartChineseTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneRussianTokenizer<br/>
+org.omegat.plugins.tokenizer.LuceneThaiTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballDanishTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballDutchTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballEnglishTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballFinnishTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballFrenchTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballGerman2Tokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballGermanTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballHungarianTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballItalianTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballNorwegianTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballPorterTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballPortugueseTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballRomanianTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballRussianTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballSpanishTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballSwedishTokenizer<br/>
+org.omegat.plugins.tokenizer.SnowballTurkishTokenizer</p>
+
+<p>在你的OmegaT启动脚本文件中将参数-- ITokenizer =后面加该分词器的全名（复制整行，并插入一个空格）添加到启动命令的末尾</p>
+
+<p>例如，要使用英语分词器（从英语翻译成别的语言时），你的启动命令现在可能是：</p>
+
+<p>java -jar OmegaT.jar %*
+--ITokenizer=org.omegat.plugins.tokenizer.SnowballEnglishTokenizer</p>
+
+<p>或者，当你要从土耳其语翻译成别的语言时，你的启动命令现在可能是：</p>
+
+<p>java -jar OmegaT.jar %* --ITokenizer=org.omegat.plugins.tokenizer.SnowballTurkishTokenizer</p>
+
+<p>注意：这整个命令必须是一行（即使它在你正在阅读的显示器上可能显示为两行）。</p>
+
+<p>7. 执行这个文件，现在再打开OmegaT ，应该就能使用分词功能了。若要验证这一点，请检查在当前OmegaT片段中包含术语表中词汇的变形的情况下，词汇表术语是否仍能显示。</p>
+
+<p>8. 如果你要从多种源语言进行翻译，因此你希望使用不同的分词器，请为你希望使用的每个分词器创建单独的OmegaT启动脚本文件。为启动脚本文件进行合适的命名，例如，把包含英语分词器命令的启动脚本文件命名为“OmegaT-EN.bat”,把包含土耳其语分词器命令的启动脚本文件命名为“OmegaT-TR.bat”</p>
+
+<p>9. 在某些情况下，你可能会发现源语言标记器会干扰目标语言拼写检查器。你可以通过也为目标语言指定一个分词器（如果可用），并使用参数--ITokenizerTarget =来消除此问题。</p>
+
+<p>例如，如果你要从汉语翻译成荷兰语，尝试：</p>
+
+<p>java -jar OmegaT.jar %* --ITokenizer=org.omegat.plugins.tokenizer.LuceneChineseTokenizer --ITokenizerTarget=org.omegat.plugins.tokenizer.LuceneDutchTokenizer</p>
+
+<p>10. 在如上所述创建启动脚本之后，您可以配置你的系统以便更方便地启动OmegaT，例如创建快捷方式。在Windows中创建快捷方式：</p>
+
+<p>右键单击启动脚本（OmegaT.bat），然后按住鼠标右键，将脚本拖到方便的位置，例如桌面。当你释放右键时，会打开一个对话框，其中包含多个选项。选择“在此创建快捷方式”。</p>
+<p>或者，右键单击启动脚本。选择：“发送到”，然后选择“桌面（创建快捷方式）”。</p>
+<p>在创建并测试快捷方式之后，你可以将其拖动到“开始”菜单，这样就可以将其添加到“开始”菜单中。</p>
+<p>版权归属于Marc Prior 2010-2011</p>
+
+</div>
+
+
+
+
+    <footer class="container-fluid text-center">
+  <a href="#page" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"><!----></span>
+  </a>
+  <div class="container-fluid">
+      <div class="col-sm-offset-3 col-sm-2 footer-column">
+        <h4>Connect</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://sourceforge.net/projects/omegat/"><img alt="Sourceforge" src="/img/sourceforge.svg" height="24" width="24"/> Sourceforge</a></li>
+            <li><a href="https://github.com/omegat-org/"><img alt="Github" src="/img/github.svg" height="24" width="24"/> Github</a></li>
+            <li><a href="https://twitter.com/OmegaTOfficial"><img alt="Twitter" src="/img/twitter.svg" height="24" width="24"/> Twitter</a></li>
+            <li><a href="https://www.facebook.com/OmegaTOfficial"><img alt="Facebook" src="/img/facebook.svg" height="24" width="24"/> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Documentation</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manual</a></li>
+            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutorials</a></li>
+            <li><a href="/zh_CN/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> How-To</a></li>
+            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> Reviews</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>The OmegaT Project</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li>
+            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> Contact and Support</a>
+            </li>
+            <li>
+            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> About</a>
+            </li>
+            <li>
+            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <p class="footer-copyright">Copyright &#xA9; 2017 - <a href="/zh_CN/">omegat.org</a></p>
+</footer>
+
+
+  </body>
+
+</html>
+

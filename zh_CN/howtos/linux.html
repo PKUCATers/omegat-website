@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>OmegaT on Linux HowTo - OmegaT</title>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest"                            href="/manifest.json">
+  <link rel="mask-icon" color="#5bbad5"           href="/safari-pinned-tab.svg">
+  <meta name="apple-mobile-web-app-title" content="OmegaT">
+  <meta name="application-name" content="OmegaT">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/zh_CN/assets/omegat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/zh_CN/assets/omegat.js"></script>
+
+
+  <meta name="description" content="OmegaT is a free open-source translation memory application for professional translators written in Java.">
+
+  <link rel="canonical" href="http://omegat.org/zh_CN/howtos/linux">
+
+  
+    <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-87327-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  
+
+  <!-- SEO tags -->
+  
+  <meta property="og:title"       content="OmegaT on Linux HowTo - OmegaT" />
+  <meta property="og:description" content="OmegaT is a free open-source translation memory application for professional translators written in Java." />
+  <meta property="og:url"         content="http://omegat.org/zh_CN/howtos/linux" />
+  <meta property="og:site_name"   content="OmegaT - The Free Translation Memory Tool" />
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@OmegaTOfficial" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    "url": "http://omegat.org/zh_CN",
+    "headline": "OmegaT on Linux HowTo",
+    "description": "OmegaT is a free open-source translation memory application for professional translators written in Java.",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://omegat.org/img/omegat_96.png"
+      }
+    },
+    "sameAs": ["https://sourceforge.net/projects/omegat/","https://github.com/omegat-org/","https://twitter.com/OmegaTOfficial","https://www.facebook.com/OmegaTOfficial"]
+  }</script>
+  <!-- /SEO tags -->
+</head>
+
+
+
+  <body id="page">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#omegat-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+      </button>
+      <a class="navbar-brand" href="/zh_CN/">
+        <img alt="OmegaT" class="logo-omegat" src="/img/omegat.svg" height="80" width="80"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/download">Download</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/resources">Resources</a></li>
+        <li><a href="/zh_CN/documentation">Documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
+              Languages<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu languages">
+            
+            <li><a href="/ar/howtos/linux">&#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a></li>
+            
+            <li><a href="/ca/howtos/linux">Catal&#xE0;</a></li>
+            
+            <li><a href="/cz/howtos/linux">&#x10C;e&#x161;tina</a></li>
+            
+            <li><a href="/de/howtos/linux">Deutsch</a></li>
+            
+            <li><a href="/el/howtos/linux">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</a></li>
+            
+            <li><a href="/howtos/linux">English</a></li>
+            
+            <li><a href="/es/howtos/linux">Espa&#xF1;ol</a></li>
+            
+            <li><a href="/fr/howtos/linux">Fran&#xE7;ais</a></li>
+            
+            <li><a href="/gl/howtos/linux">Galego</a></li>
+            
+            <li><a href="/id/howtos/linux">Bahasa Indonesia</a></li>
+            
+            <li><a href="/ia/howtos/linux">Interlingua</a></li>
+            
+            <li><a href="/it/howtos/linux">Italiano</a></li>
+            
+            <li><a href="/ko/howtos/linux">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+            
+            <li><a href="/hu/howtos/linux">Magyar</a></li>
+            
+            <li><a href="/ja/howtos/linux">&#x65E5;&#x672C;&#x8A9E;</a></li>
+            
+            <li><a href="/nl/howtos/linux">Nederlands</a></li>
+            
+            <li><a href="/pl/howtos/linux">Polski</a></li>
+            
+            <li><a href="/pt_BR/howtos/linux">Portugu&#xEA;s (Brazil)</a></li>
+            
+            <li><a href="/pt/howtos/linux">Portugu&#xEA;s (Portugal)</a></li>
+            
+            <li><a href="/ru/howtos/linux">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+            
+            <li><a href="/sq/howtos/linux">Shqip</a></li>
+            
+            <li><a href="/sk/howtos/linux">Sloven&#x10D;ina</a></li>
+            
+            <li><a href="/si/howtos/linux">Sloven&#x161;&#x10D;ina</a></li>
+            
+            <li><a href="/hr/howtos/linux">Srpskohrvatski</a></li>
+            
+            <li><a href="/fi/howtos/linux">Suomi</a></li>
+            
+            <li><a href="/sv/howtos/linux">Svenska</a></li>
+            
+            <li><a href="/uk/howtos/linux">Українська</a></li>
+            
+            <li><a href="/zh_CN/howtos/linux">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+            
+            <li><a href="/zh_TW/howtos/linux">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="jumbotron jumbo-page titles-howtos-linux"><h1>OmegaT on Linux HowTo</h1></div>
+        
+    <div class="container">
+  <p>该操作指导您如何在Linux上使用OmegaT。专门针对 Linux 新手的用户。</p>
+  <h3> Java</h3>
+  <p>OmegaT并非在所有Java版本上都能运转地令人满意。如果您的系统已经安装了Java（很可能如本案例所示），并且您准备使用该现有的全系统Java安装来与OmegaT协同，那么需要首先检查其是否适合。为此，打开一个终端（也就是控制台或命令行窗口；它的通用程序是（KDE）和gnome-terminal（GNOME）），然后输入：</p>
+  <p>java—版本</p>
+  <p>该系统会输出已安装在系统层面的java版本的细节信息。</p>
+  <p>Oracle（以前称为Sun）Java版本：在 OmegaT文档中(readme.txt)查找系统的要求以获得Oracle Java版本所要求的准确信息（也就是您的Java版本是否足够新）。</p>
+  <p>第三方Java版本：直到最近，OmegaT只能在Oracle/Sun自己的Java上运行。OmegaT现在将运行在由某些Linux发行版提供的OpenJDK Java实现上，但某些功能（如全套命令行选项）可能不可用；可能提供不同的字型集；已经报错了一些小故障，如窗口显示和分段功能。</p>
+  <p>如果您不确定您的Java版本是否适合，您可以：</p>
+  <ul>
+    <li>仅仅安装一个不带Java的OmegaT版本，观察它是否能正常运转。如果不能，您仍可以在系统层面安装本地或其他不同版本的Java。</li>
+    <li>在系统层面安装第二个非默认版本的Java，并明确使用此版本启动OmegaT。</li>
+    <li>安装包含Java的OmegaT版本。</li>
+  </ul>
+  <p>如果您确定在系统级安装的Java版本与OmegaT不兼容，并且您希望将此Java版本替换为Oracle Java版本，请首先检查Oracle软件包是否适用于您的Linux发行版（SUSE，Ubuntu等）。如果这样将使得安装更容易。</p>
+  <p>如果您直接从Oracle获得Oracle版本的Java，安装可能很简单，但您必须手动配置它才能使其成为系统级别的默认版本。这是我们不推荐的，特别是如果您不熟悉Linux。</p>
+  <p>第三个选择，即在本地级别安装包含Java的OmegaT版本。这始终是“安全”的选项，并且我们建议使用。</p>
+  <h3>选择和下载OmegaT</h3>
+  <p>以下版本的OmegaT适用于Linux：</p>
+  <p>“标准”，“最新”，“/ trunk”和“Webstart”。建议使用“最新”版本。（有关这些差异的详细信息，请参阅OmegaT网站上的“下载”页面。）</p>
+  <p>没有/包含JRE，即没有JRE的跨平台，例如 “OmegaT_2.1.7_02_Beta_Without_JRE.zip”和具有JRE的Linux特定版本，例如，“OmegaT_2.1.7_02_Beta_Linux.tar.bz2”。根据您的Java情况选择不带或带有JRE的版本（请参阅上文）。</p>
+  <p>作为一个开放源代码的应用程序，OmegaT已经被许多Linux发行版包含在他们的仓库中，所以你可以通过这条路线安装它。但请注意：</p>
+  <ul>
+    <li>大多数Linux发行版默认使用OpenJDK版本的Java。在写此文档时，OmegaT将会在Oracle版本的Java中运行得更好（见上文）。</li>
+    <li>通常提供的OmegaT版本是“标准”版本。通常“最新”版本会显示更多功能。</li>
+  </ul>
+  <p>请注意，在Linux上安装多个版本的OmegaT而没有发生冲突是很容易的。然而它们将始终访问相同的用户配置文件（除非从不同的用户帐户启动）。</p>
+  <h3>安装 OmegaT</h3>
+  <p>Linux版本的OmegaT现在提供了自己的安装脚本linux-install.sh。该脚本：</p>
+  <ul>
+    <li>将OmegaT程序文件放入/opt/omegat/OmegaT-&lt;version&gt;；</li>
+    <li>包括bash和kaptain启动脚本；</li>
+    <li>创建从 /usr/local/bin到启动脚本的链接。</li>
+  </ul>
+  <p>bash脚本是一个非常基本的文件，可以通过命令行选项手动编辑，以启动和配置OmegaT。</p>
+  <p>kaptain脚本（或者称为kaptain脚本的“语法”）使您能够从一个用户友好的GUI中选择启动和配置选项。例如，您可以使用它来选择用户界面语言，为OmegaT分配更多内存，或输入Google翻译密码。您可以自定义kaptain启动脚本，以使您的偏好设置为默认； 只需在文本编辑器中编辑omegat.kaptn文件即可。该文件是用来帮助你。然而，为了便于kaptain脚本运转，您必须先安装kaptain。如果它不在您发行版的存储库中，您可以<a href="http://kaptain.sourceforge.net">download it from kaptain.sourceforge.net</a>。</p>
+  <p>
+  <img src="/img/kaptain.png" alt=" preview_ss.png"/>
+  </p>
+  <p>
+    <i>kaptain OmegaT启动器的屏幕截图</i>
+  </p>
+  <p>安装脚本提供了更多的便利，但如果您愿意，仍然可以在Linux上手动安装OmegaT。只需在您选择的文件夹中解压缩存档。在这种情况下，启动脚本不会写入执行路径。</p>
+  <h3>从命令行启动OmegaT</h3>
+  <p>OmegaT不一定要从命令行启动，但这样做可能很有用，因为它提供了调试信息。要从命令行启动，请打开一个终端窗口（不需要root权限）。导航到包含文件OmegaT.jar的文件夹，例如：</p>
+  <p> cd /opt/omegat/OmegaT_2.3.4</p>
+  <p>并用ENTER确认。</p>
+  <p>然后输入启动命令本身，并用ENTER确认。基本的启动命令是：</p>
+  <p> java -jar OmegaT.jar</p>
+  <p>该命令区分大小写。</p>
+  <p>如果您依赖或希望使用未在系统级别安装的Java安装程序，则这还不够：您还必须指示您的系统在哪里查找Java。如果您已经安装了提供JRE的OmegaT版本，则提供的启动脚本已经为您包含此路径。如果您已经安装了额外版本的Java，但尚未将其作为系统级别的默认版本，则必须在启动命令中包含Java二进制文件的完整路径。这将类似/usr/lib/jvm/java-6-sun-1.6.0.16/jre/bin/java；在安装期间记录下安装Java的位置，以便您可以再次找到它。因此该命令为（在这种情况下）：</p>
+  <p> /usr/lib/jvm/java-6-sun-1.6.0.16/jre/bin/java -jar OmegaT.jar</p>
+  <p>在启动脚本中，不要混淆OmegaT.jar的路径和java命令的路径。如果启动脚本与OmegaT.jar不在同一文件夹中，则需要使用OmegaT.jar的路径（以及cd命令）。如果您希望使用的Java版本不是系统默认的安装版本，则需要使用java命令的 路径。</p>
+  <h3>从启动脚本运行OmegaT</h3>
+  <p>如前所述，OmegaT提供了一个bash启动脚本一旦该脚本被复制或链接到执行路径（如果你使用提供的安装脚本则会自动完成），可以通过点击<i> Alt + F2 &lt;/ i0&gt;然后键入<i> omegat &lt;/ i1&gt;来启动OmegaT &gt;，之后敲击ENTER来确认。</p>
+  <p>默认情况下，bash启动脚本是可执行的，但是您的系统可能会更改其权限（例如在解压缩存档时），您可能需要再次更改权限使其可执行。</p>
+  <h3>通过用户友好方式启动OmegaT</h3>
+  <p>为了以更加用户友好的方式启动OmegaT，可以将其添加到您的应用程序启动菜单中或者在桌面上设置启动图标。可用的方式很多，并且由于分布不同，实施这些方法的步骤也很多。</p>
+  <h3>Linux版OmegaT的字体样式</h3>
+  <p>Linux版OmegaT的字体样式由于以下因素可能会有较大差异：</p>
+  <ul>
+    <li>所使用的Java版本（在Java的Sun和OpenJDK版本上，相同的字体可能显示的样式不同）</li>
+    <li>可用的字体/所选的字体</li>
+    <li>字体大小</li>
+    <li>是否启用了抗锯齿功能（这是一个命令行启动选项，但您也可以在kaptain启动脚本中进行设置）</li>
+  </ul>
+  <h3>卸载OmegaT</h3>
+  <p>从系统中删除所有OmegaT的内容：</p>
+  <p>删除OmegaT 项目文件夹. 项目文件夹可以在您未来继续使用时重新恢复。</p>
+  <p>删除OmegaT建立的所有用户帐户的文件夹：/home/&lt;user&gt;/.omegat。这将会删除所有已创建的用户设置（例如对分段规则的更改），并且如果文件夹被正确删除（不是仅仅移动到回收站）则无法恢复。</p>
+  <p>删除所有启动脚本并删除桌面上所有OmegaT的自定义条目。</p>
+  <p>卸载OmegaT不会从您的系统中删除任何OmegaT项目，除非您将这些项目放入了OmegaT程序或配置文件的文件夹中，最好不要将这些文件放在这些位置。</p>
+  <br/>
+  <br/>
+  <p>版权归属于Marc Prior 2010-2011</p>
+</div>
+
+
+
+
+    <footer class="container-fluid text-center">
+  <a href="#page" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"><!----></span>
+  </a>
+  <div class="container-fluid">
+      <div class="col-sm-offset-3 col-sm-2 footer-column">
+        <h4>Connect</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://sourceforge.net/projects/omegat/"><img alt="Sourceforge" src="/img/sourceforge.svg" height="24" width="24"/> Sourceforge</a></li>
+            <li><a href="https://github.com/omegat-org/"><img alt="Github" src="/img/github.svg" height="24" width="24"/> Github</a></li>
+            <li><a href="https://twitter.com/OmegaTOfficial"><img alt="Twitter" src="/img/twitter.svg" height="24" width="24"/> Twitter</a></li>
+            <li><a href="https://www.facebook.com/OmegaTOfficial"><img alt="Facebook" src="/img/facebook.svg" height="24" width="24"/> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Documentation</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manual</a></li>
+            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutorials</a></li>
+            <li><a href="/zh_CN/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> How-To</a></li>
+            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> Reviews</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>The OmegaT Project</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li>
+            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> Contact and Support</a>
+            </li>
+            <li>
+            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> About</a>
+            </li>
+            <li>
+            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <p class="footer-copyright">Copyright &#xA9; 2017 - <a href="/zh_CN/">omegat.org</a></p>
+</footer>
+
+
+  </body>
+
+</html>
+

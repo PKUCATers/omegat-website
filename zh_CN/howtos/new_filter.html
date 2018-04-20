@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Howto - Creating a new file filter - OmegaT</title>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest"                            href="/manifest.json">
+  <link rel="mask-icon" color="#5bbad5"           href="/safari-pinned-tab.svg">
+  <meta name="apple-mobile-web-app-title" content="OmegaT">
+  <meta name="application-name" content="OmegaT">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/zh_CN/assets/omegat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/zh_CN/assets/omegat.js"></script>
+
+
+  <meta name="description" content="OmegaT is a free open-source translation memory application for professional translators written in Java.">
+
+  <link rel="canonical" href="http://omegat.org/zh_CN/howtos/new_filter">
+
+  
+    <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-87327-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  
+
+  <!-- SEO tags -->
+  
+  <meta property="og:title"       content="Howto - Creating a new file filter - OmegaT" />
+  <meta property="og:description" content="OmegaT is a free open-source translation memory application for professional translators written in Java." />
+  <meta property="og:url"         content="http://omegat.org/zh_CN/howtos/new_filter" />
+  <meta property="og:site_name"   content="OmegaT - The Free Translation Memory Tool" />
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@OmegaTOfficial" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    "url": "http://omegat.org/zh_CN",
+    "headline": "Howto - Creating a new file filter",
+    "description": "OmegaT is a free open-source translation memory application for professional translators written in Java.",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://omegat.org/img/omegat_96.png"
+      }
+    },
+    "sameAs": ["https://sourceforge.net/projects/omegat/","https://github.com/omegat-org/","https://twitter.com/OmegaTOfficial","https://www.facebook.com/OmegaTOfficial"]
+  }</script>
+  <!-- /SEO tags -->
+</head>
+
+
+
+  <body id="page">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#omegat-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+      </button>
+      <a class="navbar-brand" href="/zh_CN/">
+        <img alt="OmegaT" class="logo-omegat" src="/img/omegat.svg" height="80" width="80"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/download">Download</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/resources">Resources</a></li>
+        <li><a href="/zh_CN/documentation">Documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
+              Languages<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu languages">
+            
+            <li><a href="/ar/howtos/new_filter">&#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a></li>
+            
+            <li><a href="/ca/howtos/new_filter">Catal&#xE0;</a></li>
+            
+            <li><a href="/cz/howtos/new_filter">&#x10C;e&#x161;tina</a></li>
+            
+            <li><a href="/de/howtos/new_filter">Deutsch</a></li>
+            
+            <li><a href="/el/howtos/new_filter">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</a></li>
+            
+            <li><a href="/howtos/new_filter">English</a></li>
+            
+            <li><a href="/es/howtos/new_filter">Espa&#xF1;ol</a></li>
+            
+            <li><a href="/fr/howtos/new_filter">Fran&#xE7;ais</a></li>
+            
+            <li><a href="/gl/howtos/new_filter">Galego</a></li>
+            
+            <li><a href="/id/howtos/new_filter">Bahasa Indonesia</a></li>
+            
+            <li><a href="/ia/howtos/new_filter">Interlingua</a></li>
+            
+            <li><a href="/it/howtos/new_filter">Italiano</a></li>
+            
+            <li><a href="/ko/howtos/new_filter">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+            
+            <li><a href="/hu/howtos/new_filter">Magyar</a></li>
+            
+            <li><a href="/ja/howtos/new_filter">&#x65E5;&#x672C;&#x8A9E;</a></li>
+            
+            <li><a href="/nl/howtos/new_filter">Nederlands</a></li>
+            
+            <li><a href="/pl/howtos/new_filter">Polski</a></li>
+            
+            <li><a href="/pt_BR/howtos/new_filter">Portugu&#xEA;s (Brazil)</a></li>
+            
+            <li><a href="/pt/howtos/new_filter">Portugu&#xEA;s (Portugal)</a></li>
+            
+            <li><a href="/ru/howtos/new_filter">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+            
+            <li><a href="/sq/howtos/new_filter">Shqip</a></li>
+            
+            <li><a href="/sk/howtos/new_filter">Sloven&#x10D;ina</a></li>
+            
+            <li><a href="/si/howtos/new_filter">Sloven&#x161;&#x10D;ina</a></li>
+            
+            <li><a href="/hr/howtos/new_filter">Srpskohrvatski</a></li>
+            
+            <li><a href="/fi/howtos/new_filter">Suomi</a></li>
+            
+            <li><a href="/sv/howtos/new_filter">Svenska</a></li>
+            
+            <li><a href="/uk/howtos/new_filter">Українська</a></li>
+            
+            <li><a href="/zh_CN/howtos/new_filter">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+            
+            <li><a href="/zh_TW/howtos/new_filter">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="jumbotron jumbo-page titles-howtos-new_filter"><h1>Howto - Creating a new file filter</h1></div>
+        
+    <div class="container">
+  <p>”HowTo“解释了如何创建一个新的文件过滤器以便与OmegaT一起使用，并描述了如何玮TMX格式创建基本文件. 尽管翻译TMX文件听起来似乎很奇怪（这是创建文件过滤器的常见原因），但添加TMX过滤器可以让它在任何位置使用任何OmegaT项目中的TMX文件进行”文件搜索“的功能，这在标准的OmegaT版本中时不可能实现的.</p>
+  <p>要从源代码编译OmegaT ，请参阅<a href="compiling_from_source.html">从源代码”HowTo“编译OmegaT</a>.</p>
+  <p>选择一个与新过滤器类似的现有过滤器. 在这个例子中，已经选择了Help&amp;Mannul过滤器作为基础. </p>
+  <p> 找到src/org/omegat/filters3/xml文件夹，然后复制子文件夹/helpandmanual，并将其命名为/tmx. 在这个文件夹中，分别将两个文件HelpandManualDialect.java和HelpandManualFilter.java重命名为TmxDialect.java和TmxFilter.java.</p>
+  <p>在本文编辑器中打开TMXDialect.java和TMX 过滤器. 在这两个文件中，搜索“匹配案例”并进行替换</p>
+  <p>“helpandmanual" with "tmx"<br/>"HelpAndManual" with "TMX"<br/>"HELPANDMANUAL" with "TMX"<br/>"Help &amp; Manual" with "TMX"<br/>"Help&amp;Manual" with "TMX"</p>
+  <p>为新的文件格式识别段落级标签. 要找到段落标签，请在文本编辑器中检查示例文件. 在TMX文件中，片段对应的段落级标签是"tu".</p>
+  <p>在 TMXDialect.java中:</p>
+  <p>通过改变线条来定义段落标签:</p>
+  <p>&nbsp;&nbsp;&nbsp;定义段落级标签(新字符串[] { "caption", "config-value", "variable", "para", "title", "keyword", "li", });</p>
+  <p>跳转到</p>
+  <p>&nbsp;&nbsp;&nbsp;定义段落系标签(新字符串[] { "tu", });</p>
+  <p>您也可以删除横线:</p>
+  <p> &nbsp;&nbsp;&nbsp;定义快捷方式("link", "li");</p>
+  <p>由于它与TMX无关，所以即便您不进行这样的操作，新的过滤器仍然可以工作.</p>
+  <p>你可以定义外转标签. 这能定义那些在包含他们的片段之外呈现的子片段（脚注就是一个很好的例子）. 腰围TMX过滤器执行此操作，请插入改行 </p>
+  <p>&nbsp;&nbsp;&nbsp;定义外转标签（新字符串[] { "sub", });</p>
+  <p>这行下面</p>
+  <p>&nbsp;&nbsp;&nbsp;定义段落系标签(新字符串[] { "tu", });</p>
+  <p>但是，如果你不这样做，过滤器仍然可以运行.</p>
+  <p>在这几行下面，您还可以插入代码:</p>
+  <p>&nbsp;&nbsp;&nbsp;定义IntactTags(新字符串[]<br/>&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;"header",<br/>&nbsp;&nbsp;&nbsp;"prop",<br/>&nbsp;&nbsp;&nbsp;"ph",<br/>&nbsp;&nbsp;&nbsp;"bpt",<br/>&nbsp;&nbsp;&nbsp;"ept",<br/>&nbsp;&nbsp;&nbsp;"it",<br/>&nbsp;&nbsp;&nbsp;"ut",<br/>&nbsp;&nbsp;&nbsp;});</p>
+  <p>这将使TMX文件显得更整洁，但同样，这也不是必要的操作.</p>
+  <p>在TMXFilter.java里:</p>
+  <p>通过更改文件扩展名，在本例中改为.tmx:</p>
+  <p>&nbsp;&nbsp;&nbsp;public Instance[] getDefaultInstances() {<br/>&nbsp;返回新的 Instance[] { new Instance("*.xml", null, null), new Instance("*.hmxp", null, null), };</p>
+  <p>改为:</p>
+  <p>&nbsp;&nbsp;&nbsp;public Instance[] getDefaultInstances() {<br/>&nbsp;&nbsp;返回新的 Instance[] { new Instance("*.tmx", null, null), };</p>
+  <p>在文件夹/src/org/omegat中，用文本编辑器打开Bundle.properties文件并查找行</p>
+  <p>&nbsp;&nbsp;&nbsp;# HelpAndManualFilter.java<br/>
+&nbsp;&nbsp;&nbsp;HELPANDMANUAL_FILTER_NAME=Help &amp; Manual Files</p>
+  <p>在这几行下面，插入行 </p>
+  <p>&nbsp;&nbsp;&nbsp;# TMXFilter.java<br/>
+&nbsp;&nbsp;&nbsp;TMX_FILTER_NAME=TMX files</p>
+  <p>(如果您希望以非英语的用户界面语言启动OmegaT，请在相关的本地化的Bundle.properties file文件中进行相同的更改.)</p>
+  <p>在源代码的主文件夹中，用文本编辑器打开文件manifest-template.mf. 查找到以下行：</p>
+  <p>&nbsp;&nbsp;&nbsp;Name: org.omegat.filters3.xml.helpandmanual.HelpAndManualFilter<br/>
+&nbsp;&nbsp;&nbsp;OmegaT-Plugin: filter</p>
+  <p>在下方插入行：</p>
+  <p>&nbsp;&nbsp;&nbsp;Name: org.omegat.filters3.xml.tmx.TMXFilter<br/>
+&nbsp;&nbsp;&nbsp;OmegaT-Plugin: filter</p>
+  <p>按照源代码HowTo中所描述的来编译OmegaT启动新编译版本检查选项 &gt; 文件过滤器 看是否存在新过滤器. 要检查它是否有效，可以将TMX文件放在项目的/source文件夹中，或者(更有效的办法)在TMX文件上执行文本搜索&gt; 搜索文件 的操作.</p>
+  <p>Copyright Marc Prior 2008-2011</p>
+</div>
+
+
+
+
+    <footer class="container-fluid text-center">
+  <a href="#page" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"><!----></span>
+  </a>
+  <div class="container-fluid">
+      <div class="col-sm-offset-3 col-sm-2 footer-column">
+        <h4>Connect</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://sourceforge.net/projects/omegat/"><img alt="Sourceforge" src="/img/sourceforge.svg" height="24" width="24"/> Sourceforge</a></li>
+            <li><a href="https://github.com/omegat-org/"><img alt="Github" src="/img/github.svg" height="24" width="24"/> Github</a></li>
+            <li><a href="https://twitter.com/OmegaTOfficial"><img alt="Twitter" src="/img/twitter.svg" height="24" width="24"/> Twitter</a></li>
+            <li><a href="https://www.facebook.com/OmegaTOfficial"><img alt="Facebook" src="/img/facebook.svg" height="24" width="24"/> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Documentation</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manual</a></li>
+            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutorials</a></li>
+            <li><a href="/zh_CN/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> How-To</a></li>
+            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> Reviews</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>The OmegaT Project</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li>
+            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> Contact and Support</a>
+            </li>
+            <li>
+            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> About</a>
+            </li>
+            <li>
+            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <p class="footer-copyright">Copyright &#xA9; 2017 - <a href="/zh_CN/">omegat.org</a></p>
+</footer>
+
+
+  </body>
+
+</html>
+

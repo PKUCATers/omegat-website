@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Howto - Adding a preview function to OmegaT - OmegaT</title>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest"                            href="/manifest.json">
+  <link rel="mask-icon" color="#5bbad5"           href="/safari-pinned-tab.svg">
+  <meta name="apple-mobile-web-app-title" content="OmegaT">
+  <meta name="application-name" content="OmegaT">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/zh_CN/assets/omegat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/zh_CN/assets/omegat.js"></script>
+
+
+  <meta name="description" content="OmegaT is a free open-source translation memory application for professional translators written in Java.">
+
+  <link rel="canonical" href="http://omegat.org/zh_CN/howtos/preview">
+
+  
+    <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-87327-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  
+
+  <!-- SEO tags -->
+  
+  <meta property="og:title"       content="Howto - Adding a preview function to OmegaT - OmegaT" />
+  <meta property="og:description" content="OmegaT is a free open-source translation memory application for professional translators written in Java." />
+  <meta property="og:url"         content="http://omegat.org/zh_CN/howtos/preview" />
+  <meta property="og:site_name"   content="OmegaT - The Free Translation Memory Tool" />
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@OmegaTOfficial" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    "url": "http://omegat.org/zh_CN",
+    "headline": "Howto - Adding a preview function to OmegaT",
+    "description": "OmegaT is a free open-source translation memory application for professional translators written in Java.",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://omegat.org/img/omegat_96.png"
+      }
+    },
+    "sameAs": ["https://sourceforge.net/projects/omegat/","https://github.com/omegat-org/","https://twitter.com/OmegaTOfficial","https://www.facebook.com/OmegaTOfficial"]
+  }</script>
+  <!-- /SEO tags -->
+</head>
+
+
+
+  <body id="page">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#omegat-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+      </button>
+      <a class="navbar-brand" href="/zh_CN/">
+        <img alt="OmegaT" class="logo-omegat" src="/img/omegat.svg" height="80" width="80"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/download">Download</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="/zh_CN/resources">Resources</a></li>
+        <li><a href="/zh_CN/documentation">Documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
+              Languages<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu languages">
+            
+            <li><a href="/ar/howtos/preview">&#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a></li>
+            
+            <li><a href="/ca/howtos/preview">Catal&#xE0;</a></li>
+            
+            <li><a href="/cz/howtos/preview">&#x10C;e&#x161;tina</a></li>
+            
+            <li><a href="/de/howtos/preview">Deutsch</a></li>
+            
+            <li><a href="/el/howtos/preview">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</a></li>
+            
+            <li><a href="/howtos/preview">English</a></li>
+            
+            <li><a href="/es/howtos/preview">Espa&#xF1;ol</a></li>
+            
+            <li><a href="/fr/howtos/preview">Fran&#xE7;ais</a></li>
+            
+            <li><a href="/gl/howtos/preview">Galego</a></li>
+            
+            <li><a href="/id/howtos/preview">Bahasa Indonesia</a></li>
+            
+            <li><a href="/ia/howtos/preview">Interlingua</a></li>
+            
+            <li><a href="/it/howtos/preview">Italiano</a></li>
+            
+            <li><a href="/ko/howtos/preview">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+            
+            <li><a href="/hu/howtos/preview">Magyar</a></li>
+            
+            <li><a href="/ja/howtos/preview">&#x65E5;&#x672C;&#x8A9E;</a></li>
+            
+            <li><a href="/nl/howtos/preview">Nederlands</a></li>
+            
+            <li><a href="/pl/howtos/preview">Polski</a></li>
+            
+            <li><a href="/pt_BR/howtos/preview">Portugu&#xEA;s (Brazil)</a></li>
+            
+            <li><a href="/pt/howtos/preview">Portugu&#xEA;s (Portugal)</a></li>
+            
+            <li><a href="/ru/howtos/preview">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+            
+            <li><a href="/sq/howtos/preview">Shqip</a></li>
+            
+            <li><a href="/sk/howtos/preview">Sloven&#x10D;ina</a></li>
+            
+            <li><a href="/si/howtos/preview">Sloven&#x161;&#x10D;ina</a></li>
+            
+            <li><a href="/hr/howtos/preview">Srpskohrvatski</a></li>
+            
+            <li><a href="/fi/howtos/preview">Suomi</a></li>
+            
+            <li><a href="/sv/howtos/preview">Svenska</a></li>
+            
+            <li><a href="/uk/howtos/preview">Українська</a></li>
+            
+            <li><a href="/zh_CN/howtos/preview">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+            
+            <li><a href="/zh_TW/howtos/preview">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="jumbotron jumbo-page titles-howtos-preview"><h1>Howto - Adding a preview function to OmegaT</h1></div>
+        
+    
+<div class="container">
+
+
+<h3>背景</h3>
+
+<p>大多数现代CAT工具都是以片段为导向来显示文本，而不是以其最终的布局格式来显示. 虽然这样有很多有点，但若能在翻译时看到最终的布局和格式，这将对翻译人员起到非常大的帮助。出于这个原因，许多CAT工具都提供预览功能，以此来显示布局和格式，而不需要翻译人员创建最终文档并在单独的应用程序中打开它（通常是文字处理器OmegaT 不提供整体预览功能，但是可以使用附加软件实现类似功能。. 该指南介绍了设置预览功能的一般原则。</p>
+
+<h3>原则</h3>
+
+<p>理想情况下，显示器主要有两个作用：</p>
+
+<ul>
+
+<li>它会展示和最终布局与格式相近的文本。</li>
+
+<li>它会不断更新。</li>
+
+</ul>
+
+
+<h3>浏览器</h3>
+
+<p>如果你正在翻译一个.html文件，一个便捷的方法就是用一个具有自动刷新功能的浏览器来实现现成的预览功能。具有自动刷新功能的浏览器示例：</p>
+
+<ul>
+
+<li>火狐：<br/>Windows用户可以从www.mozilla.org <a href="http://www.mozilla.org">下载火狐浏览器</a>；多数Linux用户已安装火狐，或者通过发布版本库来安装。在Firefox中<a href="http://addons.mozilla.org/de/firefox/addon/reloadevery/">安装ReloadEvery组件</a>添加自动刷新功能。</li>
+
+<li>Opera:<br/>Opera适用于所有平台；它不但快速而且对硬件资源的要求很低。. 下载. The automatic refresh function is built in.</li>
+
+<li>Chrome:<br/>Chrome也同样适用于所有平台。在<a href="https://www.google.com/chrome/browser/desktop/index.html">www.google.com/chrome</a>下载Chrome. 在Chrome中添加自动刷新功能，请到应用商店<a href="https://chrome.google.com/webstore/detail/easy-auto-refresh/aabcgdmkeabbnleenpncegpcngjpnjkc">下载并安装自动刷新扩展功能</a>。 </li>
+
+</ul>
+
+<p>你可能 <i>不</i>喜欢使用常用的浏览器进行预览， 而是将其完全用来上网浏览而不是频繁切换标签，所以你可以将安装多余的浏览器作为预览功能看成是一种便利。</p>
+
+<p>选择并且安装合适的浏览器（和/或所需的附加组件）后，在项目的/ target文件夹中打开已翻译的文件：</p>
+
+<ul>
+
+<li>使用Firefox：使用文件&gt;打开文件</li>
+<li>使用Opera：Opera&gt;页面&gt;打开</li>
+
+</ul>
+
+<p>现在启用自动刷新。. 在Firefox和Opera中，你可以打开已翻译.html文件单击右键，重新加载选择所需间隔（例如5秒）。</p>
+
+<p>你现在实现了预览功能。若更新显示的内容，你必须使用Ctrl+s, Ctrl+d在OmegaT中保存并创建目标文档。最多延迟你所选择的时间间隔（加上OmegaT保存并生成目标文件所用的时间）后，更改可见。. 浏览文本时，浏览器不会自动滚动; 你必须自己滑动浏览器。当视图更新时，它至少会保留在文本中的相同位置。.</p>
+
+<h3>预览文字处理文件</h3>
+
+<p>当你的源文件为.html格式时，很容易在浏览器中打开已翻译的目标文件，但翻译经常涉及文字处理文件，这些文件在OmegaT中通常以.docx或.odt格式处理。你仍然可以使用以上描述的浏览器方案来预览文件，但是你仍然需要一个转换器来将文件转换成.html格式，以及自动启动转换器的功能，这样你就不用手动转换文件了。</p>
+
+<p>以下介绍两个转换器程序：Abiword and LibreOffice.</p>
+
+<p>Abiword 是文字处理器，LibreOffice是办公套件。这两个程序均为免费使用，适用于多种平台，并且可以将.docx和.odt文件转换成.html格式。</p>
+
+<p>Abiword体积小，速度快。它具有将.docx和.odt文件转换为.html格式的命令行功能。Linux用户和Windows用户安装起来都很容易。<a href="http://www.abisource.com/download/">下载Abiword</a>.</p>
+
+<p>LibreOffice是一个功能齐全的办公套件，类似于Microsoft Office。它也可用于将.docx和.odt文件转换为.html格式，但要从命令行执行此操作，还需要使用Unoconv插件。<a href="http://www.libreoffice.org/">下载LibreOffice</a>; <a href="http://dag.wieers.com/home-made/unoconv/">下载Unoconv插件</a>.</p>
+
+<p>成功安装Abiword或LibreOffice + Unoconv组合后，你可以将OmegaT生成的目标文件转换为html格式便于浏览器读取。请记住首先保存OmegaT并生成翻译后的文档，然后启动转换功能，等待显示器更新。</p>
+
+<p>有很多方法可以解决这个问题，但一个实际的解决方案是使用一个脚本来“监听”由OmegaT生成的翻译文件的更改，当它检测到更改时自动启动转换功能将文件转换为html格式便于浏览器读取。示意图如下：</p>
+<p><img src="/img/preview_flow.png" alt="preview_flow.png"></img></p>
+
+<p><a href="priorview.html"> Priorview Howto &lt;/ a0&gt;中描述了实现此功能的示例脚本。</p>
+
+<br/><br/>
+
+<p> 版权所有Marc Prior 2012</p>
+
+</div>
+
+
+
+
+
+    <footer class="container-fluid text-center">
+  <a href="#page" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"><!----></span>
+  </a>
+  <div class="container-fluid">
+      <div class="col-sm-offset-3 col-sm-2 footer-column">
+        <h4>Connect</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://sourceforge.net/projects/omegat/"><img alt="Sourceforge" src="/img/sourceforge.svg" height="24" width="24"/> Sourceforge</a></li>
+            <li><a href="https://github.com/omegat-org/"><img alt="Github" src="/img/github.svg" height="24" width="24"/> Github</a></li>
+            <li><a href="https://twitter.com/OmegaTOfficial"><img alt="Twitter" src="/img/twitter.svg" height="24" width="24"/> Twitter</a></li>
+            <li><a href="https://www.facebook.com/OmegaTOfficial"><img alt="Facebook" src="/img/facebook.svg" height="24" width="24"/> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Documentation</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manual</a></li>
+            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutorials</a></li>
+            <li><a href="/zh_CN/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> How-To</a></li>
+            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> Reviews</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>The OmegaT Project</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li>
+            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> Contact and Support</a>
+            </li>
+            <li>
+            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> About</a>
+            </li>
+            <li>
+            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <p class="footer-copyright">Copyright &#xA9; 2017 - <a href="/zh_CN/">omegat.org</a></p>
+</footer>
+
+
+  </body>
+
+</html>
+

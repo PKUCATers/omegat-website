@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Documentation - OmegaT</title>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest"                            href="/manifest.json">
+  <link rel="mask-icon" color="#5bbad5"           href="/safari-pinned-tab.svg">
+  <meta name="apple-mobile-web-app-title" content="OmegaT">
+  <meta name="application-name" content="OmegaT">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/fr/assets/omegat.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/fr/assets/omegat.js"></script>
+
+
+  <meta name="description" content="OmegaT est un logiciel libre de TAO écrit en Java conçu et pour des traducteurs professionnels.">
+
+  <link rel="canonical" href="http://omegat.org/fr/documentation">
+
+  
+    <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-87327-16', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  
+
+  <!-- SEO tags -->
+  
+  <meta property="og:title"       content="Documentation - OmegaT" />
+  <meta property="og:description" content="OmegaT est un logiciel libre de TAO écrit en Java conçu et pour des traducteurs professionnels." />
+  <meta property="og:url"         content="http://omegat.org/fr/documentation" />
+  <meta property="og:site_name"   content="OmegaT, l'outil libre de TAO" />
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@OmegaTOfficial" />
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    "url": "http://omegat.org/fr",
+    "headline": "Documentation",
+    "description": "OmegaT est un logiciel libre de TAO écrit en Java conçu et pour des traducteurs professionnels.",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://omegat.org/img/omegat_96.png"
+      }
+    },
+    "sameAs": ["https://sourceforge.net/projects/omegat/","https://github.com/omegat-org/","https://twitter.com/OmegaTOfficial","https://www.facebook.com/OmegaTOfficial"]
+  }</script>
+  <!-- /SEO tags -->
+</head>
+
+
+
+  <body id="page">
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#omegat-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+        <span class="icon-bar"><!----></span>
+      </button>
+      <a class="navbar-brand" href="/fr/">
+        <img alt="OmegaT" class="logo-omegat" src="/img/omegat.svg" height="80" width="80"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
+      <ul class="nav navbar-nav">
+        <li><a href="/fr/download">Téléchargement</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="/fr/resources">Ressources</a></li>
+        <li><a href="/fr/documentation">Documentation</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
+              Langues<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+            </span>
+          </a>
+          <ul class="dropdown-menu languages">
+            
+            <li><a href="/ar/documentation">&#x628;&#x627;&#x644;&#x639;&#x631;&#x628;&#x64A;&#x629;</a></li>
+            
+            <li><a href="/ca/documentation">Catal&#xE0;</a></li>
+            
+            <li><a href="/cz/documentation">&#x10C;e&#x161;tina</a></li>
+            
+            <li><a href="/de/documentation">Deutsch</a></li>
+            
+            <li><a href="/el/documentation">&#x395;&#x3BB;&#x3BB;&#x3B7;&#x3BD;&#x3B9;&#x3BA;&#x3AC;</a></li>
+            
+            <li><a href="/documentation">English</a></li>
+            
+            <li><a href="/es/documentation">Espa&#xF1;ol</a></li>
+            
+            <li><a href="/fr/documentation">Fran&#xE7;ais</a></li>
+            
+            <li><a href="/gl/documentation">Galego</a></li>
+            
+            <li><a href="/id/documentation">Bahasa Indonesia</a></li>
+            
+            <li><a href="/ia/documentation">Interlingua</a></li>
+            
+            <li><a href="/it/documentation">Italiano</a></li>
+            
+            <li><a href="/ko/documentation">&#xD55C;&#xAD6D;&#xC5B4;</a></li>
+            
+            <li><a href="/hu/documentation">Magyar</a></li>
+            
+            <li><a href="/ja/documentation">&#x65E5;&#x672C;&#x8A9E;</a></li>
+            
+            <li><a href="/nl/documentation">Nederlands</a></li>
+            
+            <li><a href="/pl/documentation">Polski</a></li>
+            
+            <li><a href="/pt_BR/documentation">Portugu&#xEA;s (Brazil)</a></li>
+            
+            <li><a href="/pt/documentation">Portugu&#xEA;s (Portugal)</a></li>
+            
+            <li><a href="/ru/documentation">&#x420;&#x443;&#x441;&#x441;&#x43A;&#x438;&#x439;</a></li>
+            
+            <li><a href="/sq/documentation">Shqip</a></li>
+            
+            <li><a href="/sk/documentation">Sloven&#x10D;ina</a></li>
+            
+            <li><a href="/si/documentation">Sloven&#x161;&#x10D;ina</a></li>
+            
+            <li><a href="/hr/documentation">Srpskohrvatski</a></li>
+            
+            <li><a href="/fi/documentation">Suomi</a></li>
+            
+            <li><a href="/sv/documentation">Svenska</a></li>
+            
+            <li><a href="/uk/documentation">Українська</a></li>
+            
+            <li><a href="/zh_CN/documentation">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</a></li>
+            
+            <li><a href="/zh_TW/documentation">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</a></li>
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="jumbotron jumbo-page titles-documentation"><h1>Documentation</h1></div>
+        
+    <div class="container">
+  <h3 id="manual">Guides</h3>
+  <p>OmegaT est accompagné d&#39;un manuel de l&#39;utilisateur complet. Le manuel est accessible directement depuis OmegaT via Aide > Manuel de l&#39;utilisateur ou via la touche « F1 ».</p>
+  <p>Un tutoriel de prise en main est affiché par défaut au lancement de l&#39;interface utilisateur. Il présente les procédures et fonctions principales d&#39;OmegaT.</p>
+  <p>Le manuel de l&#39;utilisateur peut également être consulté sans avoir à ouvrir OmegaT : il est placé dans le dossier « docs » du dossier du programme OmegaT.</p>
+  <table class="table">
+    <tr>
+      <td><a href="http://sourceforge.net/projects/omegat/files/OmegaT%20-%20Standard/OmegaT%203.6.0 update 5/OmegaT_documentation_en.PDF/download">Manuel de l&#39;utilisateur</a></td>
+      <td>Le manuel de l&#39;utilisateur d&#39;OmegaT en format PDF (OmegaT version 3.6.0 update 5).</td>
+    </tr>
+    <tr>
+      <td><a href="http://omegat.sourceforge.net/manual-standard/">Manuel d&#39;utilisation en ligne</a></td>
+      <td>Le manuel d&#39;utilisation pour la version standard OmegaT.</td>
+    </tr>
+  </table>
+  <h3 id="tutorials">Tutoriels</h3>
+  <p>Tutoriel pour débutants par Susan Welsh (Open Document Format, en anglais).</p>
+  <table class="table">
+    <tr>
+      <td><a href="/files/guide/OmegaT_for_Beginners_fr.odt">OmegaT pour les débutants</a></td>
+      <td>Tutoriel pour débutants par Susan Welsh (format PDF, en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="/files/guide/OmegaT_for_Beginners_fr.pdf">OmegaT pour les débutants</a></td>
+      <td>Introduction à la traduction assistée par ordinateur avec OmegaT par Thomas Zahreddin et Eugen Mayer (en allemand).</td>
+    </tr>
+  </table>
+  <h3 id="howto">Guides pratiques</h3>
+  <p>Ces « Comment faire » s&#39;adressent aux utilisateurs confirmés et offrent des informations concernant certaines procédures et fonctions d&#39;OmegaT non traitées dans le manuel.</p>
+  <table class="table">
+    <tr>
+      <td/>
+      <td><strong>Guides pratiques – compatibilité</strong></td>
+    </tr>
+    <tr>
+      <td><a href="howtos/compatibility.html">Compatibilité OmegaT</a></td>
+      <td>À propos de la compatibilité d&#39;OmegaT avec divers autres logiciels –  ce document renvoie à des guides pratiques plus détaillés (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/docx.html">compatibilité docx</a></td>
+      <td>À propos de la compatibilité d&#39;OmegaT avec les fichiers Microsoft Office, en particulier Word 2007 (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/compatibility_deja_vu.html">compatibilité Déjà Vu</a></td>
+      <td>À propos de la compatibilité d&#39;OmegaT avec Déjà Vu (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/export_uncleaned_rtf.html">Fichier RTF Uncleaned (« non nettoyés »)</a></td>
+      <td>À propos de l&#39;utilisation d&#39;OmegaT avec le format RTF bilingue de Trados (fichiers « non nettoyés ») (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/iceni_infix.html">Iceni Infix</a></td>
+      <td>À propos de l&#39;utilisation d&#39;OmegaT avec Iceni Infix pour la traduction de fichiers PDF (en anglais).</td>
+    </tr>
+    <tr>
+      <td/>
+      <td><strong>Guides pratiques – fonctions</strong></td>
+    </tr>
+    <tr>
+      <td><a href="howtos/spelling.html">Orthographe</a></td>
+      <td>À propos de la fonction d&#39;orthographe d&#39;OmegaT (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/prop12m.html">Propagation et traductions multiples</a></td>
+      <td>À propos des fonctions de propagation et de traductions multiples d&#39;OmegaT (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/google_translate.html">Interface avec Google Translate</a></td>
+      <td>À propos de l&#39;utilisation d&#39;OmegaT avec Google Translate.</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/ms_translator.html">MS Translator</a></td>
+      <td>Procédure de configuration de Microsoft Translator sur un Mac.</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/preview.html">Aperçu</a></td>
+      <td>Configuration d&#39;une fonction d&#39;aperçu pour OmegaT.</td>
+    </tr>
+    <tr>
+      <td/>
+      <td><strong>Guides pratiques – fonctions avancées</strong></td>
+    </tr>
+    <tr>
+      <td><a href="howtos/tokenizer.html">Extensions d&#39;analyseurs lexicaux</a></td>
+      <td>Guide d&#39;utilisation du lemmatiseur d&#39;OmegaT pour l&#39;identification des flexions dans les glossaires et correspondances approximatives (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/text_export.html">Fonction d&#39;exportation de texte d&#39;OmegaT</a></td>
+      <td>Guide d&#39;utilisation de la fonction d&#39;exportation de texte d&#39;OmegaT (interface de script) (en anglais).</td>
+    </tr>
+    <tr>
+      <td/>
+      <td><strong>Guides pratiques – divers</strong></td>
+    </tr>
+    <tr>
+      <td><a href="howtos/compiling_from_source.html">Compilation d&#39;OmegaT à partir de la source</a></td>
+      <td>Guide pour la compilation d&#39;OmegaT à partir du code source (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/new_filter.html">Création d&#39;un nouveau filtre de fichier</a></td>
+      <td>Guide de création d&#39;un filtre destiné à un nouveau format de fichier à traduire avec OmegaT (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/localizing_omegat.html">Localisation d&#39;OmegaT</a></td>
+      <td>Guide des procédures administrative et technique pour la localisation d&#39;OmegaT.</td>
+    </tr>
+    <tr>
+      <td><a href="howtos/linux.html">Utiliser OmegaT sur Linux</a></td>
+      <td>Guide d&#39;utilisation destiné en particulier aux débutants sur Linux (en anglais).</td>
+    </tr>
+  </table>
+  <h3>Documentation externe</h3>
+  <p>Les informations mentionnées ci-après sont proposées sur d&#39;autres sites et concernent diverses procédures et fonctions d&#39;OmegaT. Elles s&#39;adressent aux utilisateurs confirmés.</p>
+  <table class="table">
+    <tr>
+      <td><a href="https://nblocalization.netbeans.org/docs/HOWTOs/How-to-translate-NetBeans-using-OmegaT.html">Traduire NetBeans IDE</a></td>
+      <td>Procédure d&#39;utilisation d&#39;OmegaT pour la localisation de l&#39;EDI de NetBeans (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.magenshop.com/magento-wiki/how-to-translate-magento-using-omegat-software.html">Traduire Magento</a></td>
+      <td>Procédure d&#39;utilisation d&#39;OmegaT pour la localisation de Magento (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="http://wpml.org/documentation/translating-your-contents/using-desktop-cat-tools/translating-wordpress-xliff-files-in-omegat/">Traduire des fichiers Wordpress XLIFF</a></td>
+      <td>Procédure d&#39;utilisation d&#39;OmegaT pour la localisation de fichiers XLIFF exportés depuis Wordpress (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="http://okapi.sourceforge.net/Release/Shared/Help/tutorial_02.htm">Traduire avec Rainbow et OmegaT</a></td>
+      <td>Guide méthodique concernant les utilitaires d&#39;extraction et de fusion de texte de Rainbow pour pré- et post-traitement de fichiers à traduire avec OmegaT (en anglais) ces utilitaires permettent de travailler avec OmegaT sur des formats de fichier pour lesquels il existe des filtres de conversion XLIFF.</td>
+    </tr>
+  </table>
+  <h3>Vidéos de formation</h3>
+  <table class="table">
+    <tr>
+      <td><a href="http://www.youtube.com/playlist?list=PLFED193FA64E53D60">Liste de vidéos sur OmegaT</a></td>
+      <td>OmegaT sur la chaîne YouTube de Qabiria.</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.youtube.com/watch?v=iakqcUvRsEU">OmegaT pour les débutants</a></td>
+      <td>Vidéo d&#39;introduction à OmegaT par John Moran (en anglais).</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.youtube.com/watch?v=waW8nXGyUBU">Vidéo 1</a></td>
+      <td>Vidéo de la série OmegaT sur YouTube par Miguel Navarro (en espagnol).</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.youtube.com/watch?v=9oRsBcRXflE">Vidéo 2</a></td>
+      <td>Vidéo de la série OmegaT sur YouTube par Miguel Navarro (en espagnol).</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.youtube.com/watch?v=8m2_R6L84PE">Vidéo 3</a></td>
+      <td>Vidéo de la série OmegaT sur YouTube par Miguel Navarro (en espagnol).</td>
+    </tr>
+  </table>
+  <h3>Livres</h3>
+  <table class="table">
+    <tr>
+      <td><a href="http://www.ultimabooks.it/guida-completa-a-omegat-tecniche-trucchi-e-consigli-per-traduttori-e-project-manager">Guida completa a OmegaT: tecniche, trucchi e consigli per traduttori e project manager</a></td>
+      <td>par Marco Cevoli et Sergio Alasia (en italien)</td>
+    </tr>
+  </table>
+  <h3>Formation</h3>
+  <table class="table">
+    <tr>
+      <td><a href="http://qabiria.com/s/learnomegat">Cours de formation en ligne en anglais (payant)</a></td>
+      <td>par Marco Cevoli et Sergio Alasia</td>
+    </tr>
+  </table>
+  <h3>Blogs</h3>
+  <table class="table">
+    <tr>
+      <td><a href="http://www.velior.ru/tag/omegat/">Billet au sujet d&#39;OmegaT sur le <br/>blog d&#39;entreprise<br/> de Velior</a>.</td>
+      <td>Blog sur OmegaT. (en anglais)</td>
+    </tr>
+    <tr>
+      <td><a href="http://www.velior.ru/blog/ru/tag/omegat/">Billet au sujet d&#39;OmegaT sur le <br/>blog d&#39;entreprise<br/> de Velior</a>.</td>
+      <td>Blog sur OmegaT. (en russe)</td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+    <footer class="container-fluid text-center">
+  <a href="#page" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"><!----></span>
+  </a>
+  <div class="container-fluid">
+      <div class="col-sm-offset-3 col-sm-2 footer-column">
+        <h4>Réseaux sociaux</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://sourceforge.net/projects/omegat/"><img alt="Sourceforge" src="/img/sourceforge.svg" height="24" width="24"/> Sourceforge</a></li>
+            <li><a href="https://github.com/omegat-org/"><img alt="Github" src="/img/github.svg" height="24" width="24"/> Github</a></li>
+            <li><a href="https://twitter.com/OmegaTOfficial"><img alt="Twitter" src="/img/twitter.svg" height="24" width="24"/> Twitter</a></li>
+            <li><a href="https://www.facebook.com/OmegaTOfficial"><img alt="Facebook" src="/img/facebook.svg" height="24" width="24"/> Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Documentation</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/fr/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manuel</a></li>
+            <li><a href="/fr/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutoriels</a></li>
+            <li><a href="/fr/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> Guides pratiques</a></li>
+            <li><a href="/fr/reviews"><span class="glyphicon glyphicon-heart"></span> Point sur OmegaT</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h4>Le projet OmegaT</h4>
+        <div class="header-line"><!----></div>
+        <div class="footer-links">
+          <ul>
+            <li>
+            <a href="/fr/contact"><span class="glyphicon glyphicon-envelope"></span> Contact et assistance</a>
+            </li>
+            <li>
+            <a href="/fr/about"><span class="glyphicon glyphicon-question-sign"></span> À propos</a>
+            </li>
+            <li>
+            <a href="/fr/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophie</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  <p class="footer-copyright">Copyright &#xA9; 2017 - <a href="/fr/">omegat.org</a></p>
+</footer>
+
+
+  </body>
+
+</html>
+
