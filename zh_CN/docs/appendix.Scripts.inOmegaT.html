@@ -1,0 +1,155 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <title>Appendix&nbsp;F.&nbsp;脚本</title>
+      <link rel="stylesheet" type="text/css" href="OmegaT.css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
+      <link rel="home" href="index.html" title="OmegaT 3.5 - User's Guide">
+      <link rel="up" href="index.html" title="OmegaT 3.5 - User's Guide">
+      <link rel="prev" href="appendix.LanguageToolPlugin.inOmegaT.html" title="Appendix&nbsp;E.&nbsp;LanguageTool插件">
+      <link rel="next" href="appendix.website.html" title="Appendix&nbsp;G.&nbsp;网上的 OmegaT">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Appendix&nbsp;F.&nbsp;脚本</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="appendix.LanguageToolPlugin.inOmegaT.html">Prev</a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;<a accesskey="n" href="appendix.website.html">Next</a></td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="appendix">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="appendix.Scripts.inOmegaT"></a>Appendix&nbsp;F.&nbsp;脚本<a class="indexterm" name="d0e11305"></a></h1>
+               </div>
+            </div>
+         </div>
+         <div class="toc">
+            <dl class="toc">
+               <dt><span class="section"><a href="appendix.Scripts.inOmegaT.html#d0e11308">1. 介绍</a></span></dt>
+               <dt><span class="section"><a href="appendix.Scripts.inOmegaT.html#d0e11313">2. 用</a></span></dt>
+               <dt><span class="section"><a href="appendix.Scripts.inOmegaT.html#d0e11358">3. 脚本语言</a></span></dt>
+            </dl>
+         </div>
+         <div class="section">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e11308"></a>1.&nbsp;介绍
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>OmegaT 允许运行使用不同脚本语言发布的脚本.</p>
+         </div>
+         <div class="section">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e11313"></a>2.&nbsp;用
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>点击 <span class="guisubmenu">工具 &gt; </span><span class="guisubmenu">脚本</span> o打开脚本窗口:
+            </p>
+            <div class="screenshot">
+               <div class="mediaobject"><img src="images/ScriptingDialog.png"></div>
+            </div>
+            <p>您可以在脚本窗口的文本区加载一个已存在的脚本并且再次运行当前打开的程序. 要定制脚本功能，请执行以下操作：</p>
+            <div class="itemizedlist">
+               <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                     <p>点击左面板列表中的脚本名称加载脚本到编辑器中。</p>
+                  </li>
+               </ul>
+            </div>
+            <div class="itemizedlist">
+               <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                     <p>右键点击底面板中的“&lt;1&gt;”到“&lt;12&gt;”按钮并选择“添加”。在上面的例子中，已添加了两个脚本（位置1和2）。</p>
+                  </li>
+               </ul>
+            </div>
+            <div class="itemizedlist">
+               <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                     <p>当您左键点击数字时，将运行选择的脚本。您还可以点击<span class="guisubmenu">工具</span>菜单下的脚本条目或按<span class="keycap"><strong> Ctrl+Alt+F#</strong></span>（#表示1到12）组合键运行选择的宏。
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>默认情况下，脚本存储在位于OmegaT安装文件夹（包含OmegaT.jar的文件夹）中的“scripts”文件夹里。</p>
+            <p>您可以在这里添加新的脚本，这些脚本会出现在脚本窗口里的可用脚本列表里。</p>
+            <p>一些附带脚本可以写这里找到： <a class="ulink" href="https://sourceforge.net/projects/omegatscripts/" target="_top">OmegaT Scripts</a>
+                   
+            </p>
+         </div>
+         <div class="section">
+            <div class="titlepage">
+               <div>
+                  <div>
+                     <h2 class="title" style="clear: both"><a name="d0e11358"></a>3.&nbsp;脚本语言
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <p>目前已支持下列脚本语言：</p>
+            <div class="itemizedlist">
+               <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                     <p><span class="bold"><strong>Groovy</strong></span>（http://groovy.codehaus.org）：是用于Java虚拟机的动态语言。它构建于增强的Java之上，含有从Python、Ruby和Smalltalk等语言获得灵感而实现的附加强大功能。
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <div class="itemizedlist">
+               <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                     <p><span class="bold"><strong>JavaScript</strong></span>（不会与Java混淆时简写为JS）：是动态、弱类型且具有一类函数的基于原型的脚本语言。它是多范型语言，支持面向对象、命令和函数式编程风格。它工作于像Firefox这样流行软件的后台，是开源领域中常见和首选的编程工具。
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <p>所有的语言都能访问OmegaT对象模型，其中的顶级对象为项目。例如下面的groovy代码片段扫描当前项目所有文件中的所有片段，且当某个片段的翻译存在时打印出它的源和目标译文：</p><pre class="programlisting">    files = project.projectFiles;
+    for (i in 0 ..&lt; files.size())
+    {
+        for (j in 0 ..&lt; files[i].entries.size())
+        {
+            currSegment = files[i].entries[j];
+            if (project.getTranslationInfo(currSegment))
+            {
+                source = currSegment.getSrcText();
+                target = project.getTranslationInfo(currSegment).translation;
+                console.println(source + " &gt;&gt;&gt;&gt; " + target);
+            }
+        }
+    }</pre></div>
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="appendix.LanguageToolPlugin.inOmegaT.html">Prev</a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;<a accesskey="n" href="appendix.website.html">Next</a></td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Appendix&nbsp;E.&nbsp;LanguageTool插件&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td>
+               <td width="40%" align="right" valign="top">&nbsp;Appendix&nbsp;G.&nbsp;网上的 OmegaT</td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
