@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>Howto - Translating Word 2007 files in OmegaT - OmegaT</title>
+  <title>Howto - 在OmegaT中翻译Word2007格式的文件 - OmegaT</title>
 
   
   <link rel="apple-touch-icon" sizes="180x180"    href="/apple-touch-icon.png">
@@ -42,10 +42,10 @@
 
   <!-- SEO tags -->
   
-  <meta property="og:title"       content="Howto - Translating Word 2007 files in OmegaT - OmegaT" />
+  <meta property="og:title"       content="Howto - 在OmegaT中翻译Word2007格式的文件 - OmegaT" />
   <meta property="og:description" content="OmegaT is a free open-source translation memory application for professional translators written in Java." />
   <meta property="og:url"         content="http://omegat.org/zh_CN/howtos/docx" />
-  <meta property="og:site_name"   content="OmegaT - The Free Translation Memory Tool" />
+  <meta property="og:site_name"   content="OmegaT——免费的翻译记忆工具" />
   
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@OmegaTOfficial" />
@@ -55,7 +55,7 @@
     "@type": "WebSite",
     "name": "",
     "url": "http://omegat.org/zh_CN",
-    "headline": "Howto - Translating Word 2007 files in OmegaT",
+    "headline": "Howto - 在OmegaT中翻译Word2007格式的文件",
     "description": "OmegaT is a free open-source translation memory application for professional translators written in Java.",
     "publisher": {
       "@type": "Organization",
@@ -88,17 +88,17 @@
     </div>
     <div class="collapse navbar-collapse navbar-right" id="omegat-menu">
       <ul class="nav navbar-nav">
-        <li><a href="/zh_CN/download">Download</a></li>
+        <li><a href="/zh_CN/download">下载</a></li>
       </ul>
       <ul class="nav navbar-nav">
-        <li><a href="/zh_CN/resources">Resources</a></li>
-        <li><a href="/zh_CN/documentation">Documentation</a></li>
+        <li><a href="/zh_CN/resources">资源</a></li>
+        <li><a href="/zh_CN/documentation">文档</a></li>
       </ul>
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <span data-toggle="popover" class="language-popover" data-trigger="manual" data-container="body" title="-" data-content="-" data-placement="bottom">
-              Languages<span class="caret"><!----></span> <span class="sr-only">(current)</span>
+              语言<span class="caret"><!----></span> <span class="sr-only">(current)</span>
             </span>
           </a>
           <ul class="dropdown-menu languages">
@@ -169,7 +169,7 @@
 </nav>
 
 
-    <div class="jumbotron jumbo-page titles-howtos-docx"><h1>Howto - Translating Word 2007 files in OmegaT</h1></div>
+    <div class="jumbotron jumbo-page titles-howtos-docx"><h1>Howto - 在OmegaT中翻译Word2007格式的文件</h1></div>
         
     <div class="container">
   <p>本HowTo提供有关在OmegaT中翻译MS Office 2007及更高版本（Office Open XML，.docx）文件的提示。</p>
@@ -193,51 +193,57 @@
       <p>Word 2007标记任何不在其拼写词典中的单词，因此即使是一些它认为拼错的单词也会导致过多的标签。如果OmegaT中的每个单词都包含在标签内，Word可能会拼写检查文本而无法访问合适的拼写字典，因此将每个单词标记为拼写错误。一种解决方案是关闭Word中的自动拼写检查。</p>
     </li>
     <li>
-      <p>自动连字还会添加不必要的标签，因此请将其禁用。It may be necessary to do this for each document, in which case the procedure in Word 2007 is: Click the Page Layout tab; in the Page Setup group, click Hyphenation; then click None.</p>
+      <p>自动连字还会添加不必要的标签，因此请将其禁用。需要为每个文档执行此操作，在这种情况下，Word 2007中的过程是：单击“页面布局”选项卡; 在“页面设置”组中，单击“断字”; 然后单击"无"。</p>
     </li>
     <li>
-      <p>Use Search and Replace to remove double spaces (replacing them with a single space).</p>
+      <p>使用"查找"和"替换"，用单空格替换双空格。</p>
     </li>
-    <li>If your text contains both Asian and "normal" (e.g. Latin) characters, use Ctrl+A to select the entire text, then select a single font for it. Be careful to choose a font that contains both the necessary Asian and "normal" characters, such as MS Mincho, but without the "[text body]" style suffix.</li>
+    <li>如果在文本既含有亚洲字符与“通用”字符（如拉丁语），使用Ctrl+A全选，并选择字体。仔细选择字体，使其包含必要的亚洲字符和“通用”字符，例如MS Mincho，但没有“[text body]”样式后缀。</li>
     <li>
-      <p>Word 2007 inserts a tag at page breaks, even automatic page breaks. This tag apparently cannot be removed.</p>
+      <p>Word 2007在“分页符”上插入标签，甚至是自动分页符。这个标签显然不能被删除。</p>
     </li>
   </ul>
-  <p>Note that even after Word's settings have been changed so that it does not insert "nuisance" codes, for example for auto-hyphenation, such codes may still be present in the file and not removed by the change in configuration. Removal of these codes is described below. Before following the instructions below for removal of the nuisance codes, however, remember to make the configuration changes in Word first, or Word may simply re-insert nuisance codes again when the file is next opened.</p>
-  <h3>Third-party tools</h3>
-  <p>As already mentioned, this problem with MS Word is not unique to OmegaT. Third-party tools have been produced to deal with the problem. Two of these are:</p>
-  <p><a href="http://asap-traduction.com/CodeZapper">CodeZapper</a> (inexpensive)</p>
-  <p><a href="http://www.translatortools.net/word-doccleaner.html">Document Cleaner</a> (free)</p>
-  <h3>Levelling character formatting</h3>
-  <p>An alternative to running the CodeZapper macro on your text is to "level" the formatting. "Levelling" the formatting means applying the format of the first character in a selection of text (such as a whole paragraph) to all subsequent characters. Note that this is not the same as "deleting" the formatting, which would cause the character formatting to revert to the document's default.</p>
-  <p>You can level the formatting of paragraphs essentially by copying whole paragraphs in MS Word and pasting them back over themselves such that the entire paragraph assumes the formatting of the first character.</p>
-  <h3>Levelling the character formatting of a paragraph manually</h3>
-  <p>Step 1: Unhide the paragraph mark. Mark each paragraph by clicking on it repeatedly until the entire paragraph is highlighted. Then move the end of the highlighting one character to the left so that it does not include the paragraph mark.</p>
-  <p>Step 2: Copy this highlighted text (Ctrl+C). Then select "Paste Special" (Word 2003) or click on the arrow at the bottom of the "Insert" button (Word 2007) to obtain the extended Paste options. Finally, insert the content using the "Unformatted Unicode text" option.</p>
-  <p>Where paragraphs do contain inline formatting (bold, italics, hyperlinks, etc.), you can either:</p>
-  <p>- level the formatting from these paragraphs using the macro as described above, then re-insert the formatting; or</p>
-  <p>- mark only the text up to the beginning of the formatted part, copy this text and paste it back over itself, then repeat the process on the text after the formatted part.  </p>
-  <h3>Creating a macro to level the character formatting of a paragraph</h3>
-  <p>You can automate the above procedure somewhat by creating a macro. Brief instructions for creating the macro (in MS Office 2007) are provided below. (For more detailed instructions, refer to your instruction manual or click <a href="http://office.microsoft.com/en-us/word-help/record-or-run-a-macro-HA010099769.aspx">here</a>, <a href="http://www.dummies.com/how-to/content/how-to-create-a-word-2007-macro.html">here</a> or <a href="https://oit.nd.edu/assets/141085/word_2013_macros_qrg.pdf">here</a>.)</p>
-  <p>If you have not already done so, add the Developer tab to the ribbon as follows: click on the Office button. Select Word Options. Click Popular in the Word Options dialog box. On the ribbon, check Show Developer tab and confirm with OK. Close Word.</p>
-  <p>Launch Word again, create a new Word file and add a paragraph of sample text, at least three lines long, e.g.:</p>
-  <p>This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.</p>
-  <p>Click on the paragraph mark button to make paragraph marks visible.</p>
-  <p>Place the cursor in your paragraph of text (not in the first or last lines).</p>
-  <p>Create the macro:</p>
-  <p>On the Developer tab, click on Record Macro.</p>
-  <p>In the Macro name box, type a name for the macro, such as "levelformat". To make the macro available in all documents, select Normal.dotm in the "Store macro in" box. If you have made changes to your Normal.dotm, you might want to back this up first.  </p>
-  <p>Click on the Keyboard button. Click in the box for a new keyboard combination, then experiment with keyboard combinations to find one that is not assigned. If a combination you try is already assigned, a message to this effect is displayed in the dialogue, and you can delete the combination and try another. Ctrl+Shift+9 appears not to be assigned to any other function in the basic Word installation, but you can use any other combination that has not already been assigned.</p>
-  <p>Click on Assign to assign the shortcut to the macro that you are about to record. Anything you now do will be recorded in the macro, so follow this procedure carefully:</p>
-  <p>Ctrl+Cursor Up (this takes the cursor to the beginning of the paragraph)</p>
-  <p>Ctrl+Shift+Cursor Down (this selects the paragraph, including the paragraph mark)</p>
-  <p>Shift+Cursor Left (this moves the end of the selection one character to the 
-left so that it no longer includes the paragraph mark)</p>
-  <p>Ctrl+C (this copies the paragraph)</p>
-  <p>Ctrl+V (this pastes the text of the paragraph back over the paragraph)</p>
-  <p>After entering these commands, click Stop Recording.</p>
-  <p>Click on Macros and select levelformat (or whatever name you gave to your macro), then Edit. The 
-code of your macro(s) will be displayed. For levelformat, this should be:</p>
+  <p>请注意，以为了不插入“干扰”代码（例如自动连字符），即使Word的设置已更改，此类代码仍可能存在于文件中，并且不会因配置更改而被删除。下面介绍这些代码如何被删除。但是，在按照以下说明去除干扰码之前，记得首先在Word中进行配置更改，或者在下一次打开文件时，word可能会再次重新插入干扰码。</p>
+  <h3>第三方工具</h3>
+  <p>如前所述，MS Word的这个问题并不是OmegaT独有的。已经有第三方工具来处理这个问题。其中两个分别是：</p>
+  <p><a href="http://asap-traduction.com/CodeZapper">CodeZapper</a> 便宜</p>
+  <p><a href="http://www.translatortools.net/word-doccleaner.html">文件清洁器</a> (免费）</p>
+  <h3>调平字符的格式</h3>
+  <p>在文本上运行CodeZapper宏的另一种方法是“级别”格式化。“平整”格式意味着将选定文本中的第一个字符的格式（例如整段），应用于所有后续字符。需要注意的是，这与“删除”格式不同，这会导致字符格式化恢复为文档的默认格式。</p>
+  <p>您基本上可以复制MS Word中的整个段落，并粘贴他们至整个段落，使整段采用第一个字符的格式来平整段落的格式。</p>
+  <h3>手动调整段落的字符格式</h3>
+  <p>第1步：取消隐藏段落标记。通过反复点击来标记每个段落，直到整个段落突出显示。然后将突出显示的一个字符的末尾向左移动，使其不包含段落标记。</p>
+  <p>第2步：复制突出显示的文本（Ctrl + C）。
+然后选择“特殊粘贴”（Word 2003）或单击“插入”按钮（Word 2007）底部的箭头以获取扩展粘贴选项。
+最后，使用“无格式Unicode文本”选项插入内容。
+</p>
+  <p>在段落包含内联格式（粗体，斜体，超链接等）的情况下，您可以：
+</p>
+  <p>- 如上所述使用宏对这些段落进行格式化，然后重新插入格式;要么
+</p>
+  <p>- 只将文本标记到格式化部分的开头，复制此文本并将其粘贴，然后在格式化后的部分之后对文本重复该过程。
+ </p>
+  <h3>创建一个宏来平整段落的字符格式
+</h3>
+  <p>您可以通过创建宏来自动执行上述过程。下面提供了创建宏的简要说明（在MS Office 2007中）。（有关更详细的说明，请参阅您的说明手册或点击<a href="http://office.microsoft.com/en-us/word-help/record-or-run-a-macro-HA010099769.aspx"> 这里 &lt;/ a0&gt;，<a href="http://www.dummies.com/how-to/content/how-to-create-a-word-2007-macro.html"> 这里 &lt;/ a1&gt;或<a href="https://oit.nd.edu/assets/141085/word_2013_macros_qrg.pdf"> 这里 &lt;/ a2&gt;。）</p>
+  <p>如果您尚未这样做，请按如下方式将“开发人员”选项卡添加到功能区：单击Office按钮。选择Word选项。单击Word选项对话框中的“常用”。在功能区上，选中“Show Developer”选项卡并按OK进行确认。关闭Word。</p>
+  <p>再次启动Word，创建一个新的Word文件并添加一段至少三行的示例文本，例如：</p>
+  <p>这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。这里是一段。</p>
+  <p>点击段落标记按钮可以显示段落标记。</p>
+  <p>将光标放在文本段落中（不在第一行或最后一行）。</p>
+  <p>创建宏：</p>
+  <p>在开发人员选项卡上，单击记录宏。</p>
+  <p>在宏名框中，键入该宏的名称，如“levelformat”。要使宏在所有文档中可用，请在“存储宏在”框中选择Normal.dotm。
+如果您对Normal.dotm进行了更改，则可能需要先将其备份。 </p>
+  <p>点击键盘按钮。单击框中的新键盘组合，然后尝试使用键盘组合找到未分配的键盘组合。如果您尝试的组合已被分配，则会在对话框中显示此结果的消息，您可以删除组合并尝试其他组合。Ctrl + Shift + 9似乎没有被分配给基本Word安装中的任何其他功能，您可以使用尚未分配的任何快捷键组合。</p>
+  <p>点击“Assign”将快捷方式分配给您即将录制的宏。您现在所做的任何操作都将记录在宏中，因此请谨慎执行此过程：</p>
+  <p>Ctrl +光标向上（这将光标移动到段落的开头）</p>
+  <p>Ctrl + Shift +光标向下（这将选择段落，包括段落标记）</p>
+  <p>Shift +光标左移（这会将选区的末尾向左移动一个字符，以便不再包含段落标记）</p>
+  <p>Ctrl + C（复制此段落）</p>
+  <p>Ctrl + V（这会将段落的文本粘贴到段落上）</p>
+  <p>输入这些命令后，单击停止录制。</p>
+  <p>点击宏并选择levelformat（或者你给宏的任何名字），然后选择编辑。The code of your macro(s) will be displayed. 您的宏代码将被显示。</p>
   <p>___________________<br/>
 Sub levelformat()<br/>
 '<br/>
@@ -251,28 +257,29 @@ Sub levelformat()<br/>
     Selection.PasteAndFormat (wdPasteDefault)<br/>
 End Sub<br/>
 ___________________</p>
-  <p>Change the line:</p>
+  <p>更改该行</p>
   <p>        Selection.PasteAndFormat (wdPasteDefault)</p>
   <p>改为:</p>
   <p>        Selection.PasteSpecial DataType:=wdPasteText</p>
-  <p>Save with Ctrl+S, and close the macro editing window.</p>
-  <p>If all has gone according to plan, your macro should now work. To test it, add some formatting to your Word document, for example by making one word bold. Now simply place the cursor anywhere in the paragraph and press Ctrl+Shift+9 (or whatever other keyboard shortcut you selected), and you should see the formatting disappear.</p>
-  <p>You can change the keyboard shortcut at any time. To do this, click the main "Office" button, then Word options (bottom right of the dialog).</p>
-  <p>Click Customize &gt; Choose commands. Choose Macros from the drop-down list. Select "levelformat" (or whatever you called it).</p>
-  <p>At the bottom of the dialog next to Keyboard shortcuts, click on Customize.</p>
-  <p>In the Categories box, scroll down to Macros and select it. Then on the right, under Macros, select levelformat (or whatever you called your macro). The current shortcut will be displayed in the relevant box. You can clear it by selecting it and hitting Delete. You can then enter a new shortcut and assign it with Assign as you did before. Close/confirm the dialogs.</p>
-  <p>You can use a similar procedure to create a button for your macro:</p>
-  <p>Again, click the main "Office" button, then Word options.</p>
-  <p>Click Customize &gt; Choose commands. Choose Macros from the drop-down list. Select your macro.</p>
-  <p>Click on Add. You should see the macro command appear in the right-hand column. Click on Modify.</p>
-  <p>Pick a symbol, then OK &gt; OK. The symbol for your macro should appear in the toolbar.</p>
-  <p>This macro is useful for levelling the formatting of a whole paragraph that contains no visible formatting. Where a paragraph contains desired formatting, you must restore the deleted formatting after levelling the paragraph. In paragraphs containing lots of formatting, restoring the deleted formatting can be quite a lot of work. For such paragraphs, consider the following alternatives:  </p>
+  <p>用Ctrl + S保存，然后关闭宏编辑窗口。</p>
+  <p>如果一切都按计划进行，现在你的宏应该工作。要对其进行测试，请在Word文档中添加一些格式，例如将一个单词用粗体表示。现在只需将光标放在段落的任意位置，然后按Ctrl + Shift + 9（或其他任何键盘快捷键），您应该看到格式消失</p>
+  <p>您可以随时更改键盘快捷键。为此，请单击主“Office”按钮，然后单击Word选项（对话框的右下角）。</p>
+  <p>点击自定义&gt;选择命令。从下拉列表中选择宏。选择“levelformat”（或任何你选择的名字）。</p>
+  <p>在键盘快捷键旁边对话框的底部，点击自定义。</p>
+  <p>在类别框中，向下滚动到宏并选中它。然后在右边的宏下，选择levelformat（或者任何你命名的宏）。当前快捷方式将显示在相关框中。您可以通过选择并按删除键来清除它。然后，您可以输入一个新的快捷方式，并像以前一样为其指定“Assign”。关闭/确认对话框。</p>
+  <p>您可以使用类似的过程为您的宏创建一个按钮：</p>
+  <p>再次点击主“Office”按钮，然后点击Word选项。</p>
+  <p>点击自定义&gt;选择命令。从下拉列表中选择宏。选择你的宏</p>
+  <p>点击添加您应该看到宏命令出现在右侧的列中。点击修改。</p>
+  <p>选择一个符号，然后确定&gt;确定。您的宏的符号应该出现在工具栏中。</p>
+  <p>此宏用于调整不包含可见格式的整个段落的格式。如果段落包含所需的格式，则必须在平整段落后恢复已删除的格式。在包含大量格式的段落中，恢复已删除的格式可能是相当多的工作。
+对于这些段落，请考虑以下替代方案： </p>
   <ul>
     <li>
-      <p>Use Dave Turner's CodeZapper macro.  </p>
+      <p>使用Dave Turner的CodeZapper宏。 </p>
     </li>
     <li>
-      <p>Create a second macro (with its own button and/or keyboard shortcut) of your own that only levels highlighted text, rather than the entire paragraph. (Record as described above, but only recording the command Ctrl+C followed by Ctrl+V.) You can then highlight text between the points at which formatting changes. This will level the formatting over sections of text that have the same, desired formatting, and you will not then need to restore deleted formatting.</p>
+      <p>创建一个自己的第二个宏（带有自己的按钮和/或键盘快捷键），它只能突出显示文本级别，而不是整个段落。(Record as described above, but only recording the command Ctrl+C followed by Ctrl+V.) You can then highlight text between the points at which formatting changes. This will level the formatting over sections of text that have the same, desired formatting, and you will not then need to restore deleted formatting.</p>
     </li>
     <li>
       <p>Use the level formatting macro only on paragraphs with little or no formatting. Paragraphs that you have not "levelled" will then contain nuisance tags, but at least the others will be much "cleaner".</p>
@@ -293,7 +300,7 @@ ___________________</p>
   </a>
   <div class="container-fluid">
       <div class="col-sm-offset-3 col-sm-2 footer-column">
-        <h4>Connect</h4>
+        <h4>连接</h4>
         <div class="header-line"><!----></div>
         <div class="footer-links">
           <ul>
@@ -305,30 +312,30 @@ ___________________</p>
         </div>
       </div>
       <div class="col-sm-2 footer-column">
-        <h4>Documentation</h4>
+        <h4>文档</h4>
         <div class="header-line"><!----></div>
         <div class="footer-links">
           <ul>
-            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> Manual</a></li>
-            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> Tutorials</a></li>
+            <li><a href="/zh_CN/documentation#manual"><span class="glyphicon glyphicon-book"></span> 手册</a></li>
+            <li><a href="/zh_CN/documentation#tutorials"><span class="glyphicon glyphicon-user"></span> 教程</a></li>
             <li><a href="/zh_CN/documentation#howto"><span class="glyphicon glyphicon-question-sign"></span> How-To</a></li>
-            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> Reviews</a></li>
+            <li><a href="/zh_CN/reviews"><span class="glyphicon glyphicon-heart"></span> 评论</a></li>
           </ul>
         </div>
       </div>
       <div class="col-sm-2 footer-column">
-        <h4>The OmegaT Project</h4>
+        <h4>OmegaT项目</h4>
         <div class="header-line"><!----></div>
         <div class="footer-links">
           <ul>
             <li>
-            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> Contact and Support</a>
+            <a href="/zh_CN/contact"><span class="glyphicon glyphicon-envelope"></span> 联系和支持</a>
             </li>
             <li>
-            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> About</a>
+            <a href="/zh_CN/about"><span class="glyphicon glyphicon-question-sign"></span> 关于</a>
             </li>
             <li>
-            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> Philosophy</a>
+            <a href="/zh_CN/philosophy"><span class="glyphicon glyphicon-console"></span> 理念</a>
             </li>
           </ul>
         </div>
